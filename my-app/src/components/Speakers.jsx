@@ -11,60 +11,60 @@ const Speakers = () => {
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80"
     },
     {
-      name: "Dr. prashant shukla ",
-      title: "HOD of cse department ",
+      name: "Dr. Feaculity off Pharmacy ",
+      title: "HOD of Pharmacy  department ",
       institution: "Indian Institute of Technology",
-      bio: "Dr. shukla specializes in novel drug delivery systems and has published over 100 research papers.",
+      bio: "Dr. feaculity of Pharmacy specializes in novel drug delivery systems and has published over 100 research papers.",
       image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80"
     },
     {
-      name: "Dr. savnjeev ",
-      title: "Chief of cse department ",
+      name: "Dr. feaculity of Pharmacy ",
+      title: "Chief of Pharmacy department ",
       institution: "united university ",
-      bio: "Dr. Kumar has extensive experience in regulatory affairs and has led approvals for multiple pharmaceutical products.",
+      bio: "Dr. feaculity of Pharmacy has extensive experience in regulatory affairs and has led approvals for multiple pharmaceutical products.",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80"
     }
   ];
 
   const organizingCommittee = [
     {
-      name: "Dr. Sunita Verma",
+      name: "Dr. Feaculity of pharmacy ",
       role: "Conference Chair",
       institution: "United University"
     },
     {
-      name: "Dr. Rajesh Gupta",
+      name: "Dr. Feaculity of pharmacy ",
       role: "Program Chair",
       institution: "United University"
     },
     {
-      name: "Dr. Nalini Rao",
+      name: "Dr. Feaculity of pharmacy",
       role: "Scientific Chair",
       institution: "United University"
     },
     {
-      name: "Dr. Anil Kumar",
+      name: "Dr. Feaculity of pharmacy",
       role: "Finance Chair",
       institution: "United University"
     },
     {
-      name: "Dr. Meera Patel",
+      name: "Dr. Feaculity of pharmacy",
       role: "Publication Chair",
       institution: "United University"
     },
     {
-      name: "Dr. Vikram Singh",
+      name: "Dr. Feaculity of pharmacy",
       role: "Registration Chair",
       institution: "United University"
     }
   ];
 
   const advisoryCommittee = [
-    "Dr. Ramesh Sharma - National Institute of Pharmaceutical Education and Research",
-    "Dr. Priya Patel - Indian Institute of Technology",
-    "Dr. Amit Kumar - PharmaTech Solutions Ltd.",
-    "Dr. Sunita Verma - United University",
-    "Dr. Rajesh Gupta - United University"
+    "Dr. Feaculity of pharmacy- National Institute of Pharmaceutical Education and Research",
+    "Dr. Feaculity of pharmacy - Indian Institute of Technology",
+    "Dr. Feaculity of pharmacy - PharmaTech Solutions Ltd.",
+    "Dr. Feaculity of pharmacy - United University",
+    "Dr. Feaculity of pharmacy - United University"
   ];
 
   return (
@@ -153,7 +153,7 @@ const Speakers = () => {
               Join our organizing team and gain valuable experience in academic event management.
             </p>
             <button className="bg-white text-indigo-600 font-bold py-3 px-6 rounded-lg hover:bg-indigo-50 transition-colors">
-              Volunteer for NPC 2025
+              Volunteer for United university 2025
             </button>
           </div>
         </div>

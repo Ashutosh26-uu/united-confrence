@@ -51,7 +51,7 @@ const Registration = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Registration</h2>
           <div className="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Register now for the National Pharmacy Conference 2025 and be part of this exciting event
+            Register now for the United university Pharmacy Conference 2025 and be part of this exciting event
           </p>
         </div>
 
@@ -145,13 +145,13 @@ const Registration = () => {
                   <div className="flex items-start">
                     <AlertCircle className="h-5 w-5 text-yellow-500 mt-0.5 mr-2 flex-shrink-0" />
                     <p className="text-gray-700 text-sm">
-                      <span className="font-semibold">Regular Registration:</span> Until March 10, 2025
+                      <span className="font-semibold">Regular Registration:</span> Until august 10, 2025
                     </p>
                   </div>
                   <div className="flex items-start">
                     <AlertCircle className="h-5 w-5 text-yellow-500 mt-0.5 mr-2 flex-shrink-0" />
                     <p className="text-gray-700 text-sm">
-                      <span className="font-semibold">On-site Registration:</span> March 15-17, 2025
+                      <span className="font-semibold">On-site Registration:</span> october 15-17, 2025
                     </p>
                   </div>
                 </div>

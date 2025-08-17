@@ -26,11 +26,11 @@ const Venue = () => {
   const travelInfo = [
     {
       mode: "By Air",
-      details: "Nearest airport is Indira Gandhi International Airport (DEL), 300 km away. Airport transfers available."
+      details: "Bamroli Airport, 3 km away. Airport transfers available."
     },
     {
       mode: "By Train",
-      details: "Nearest railway station is Uttar Pradesh Junction, 15 km from venue. Taxi service available."
+      details: "Nearest railway station is Prayagraj(North - Central) Junction, 11 km from venue. Taxi service available."
     },
     {
       mode: "By Road",
@@ -166,7 +166,7 @@ const Venue = () => {
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">Emergency Contacts</h4>
                   <p className="text-gray-700">
                     Security: +91 1234567890<br />
-                    Medical Emergency: +91 9876543210<br />
+                    Medical Emergency(United Medicity): +91 9876543210<br />
                     Conference Helpdesk: +91 1122334455
                   </p>
                 </div>
@@ -183,7 +183,7 @@ const Venue = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a 
-              href="mailto:accommodation@npc2025.edu" 
+              href="mailto:uniteduniversity2025.edu" 
               className="bg-white text-indigo-600 font-bold py-3 px-6 rounded-lg hover:bg-indigo-50 transition-colors"
             >
               Email Accommodation Team

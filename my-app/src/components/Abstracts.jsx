@@ -127,19 +127,19 @@ const Abstracts = () => {
                   <div className="flex items-start">
                     <AlertCircle className="h-5 w-5 text-yellow-500 mt-0.5 mr-2 flex-shrink-0" />
                     <p className="text-gray-700 text-sm">
-                      <span className="font-semibold">Deadline:</span> January 15, 2025
+                      <span className="font-semibold">Deadline:</span> october 15, 2025
                     </p>
                   </div>
                   <div className="flex items-start">
                     <AlertCircle className="h-5 w-5 text-yellow-500 mt-0.5 mr-2 flex-shrink-0" />
                     <p className="text-gray-700 text-sm">
-                      <span className="font-semibold">Notification:</span> January 30, 2025
+                      <span className="font-semibold">Notification:</span> may 30, 2025
                     </p>
                   </div>
                   <div className="flex items-start">
                     <AlertCircle className="h-5 w-5 text-yellow-500 mt-0.5 mr-2 flex-shrink-0" />
                     <p className="text-gray-700 text-sm">
-                      <span className="font-semibold">Presentation:</span> March 15-17, 2025
+                      <span className="font-semibold">Presentation:</span> october 15-17, 2025
                     </p>
                   </div>
                 </div>

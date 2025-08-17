@@ -11,30 +11,30 @@ const Contact = () => {
 
   const coordinators = [
     {
-      name: "Dr. Sunita Verma",
+      name: "Dr.Feaculity of pharmacy ",
       role: "Conference Chair",
-      email: "sunita.verma@university.edu",
+      email: "Feaculity of pharmacy@university.edu",
       phone: "+91 9876543210",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80"
     },
     {
-      name: "Dr. Rajesh Gupta",
+      name: "Dr. Feaculity of pharmacy",
       role: "Program Chair",
-      email: "rajesh.gupta@university.edu",
+      email: "Feaculity of pharmacy@university.edu",
       phone: "+91 8765432109",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80"
     },
     {
-      name: "Dr. Nalini Rao",
+      name: "Dr. Feaculity of pharmacy",
       role: "Scientific Chair",
-      email: "nalini.rao@university.edu",
+      email: "Feaculity of pharmacy@university.edu",
       phone: "+91 7654321098",
       image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80"
     },
     {
-      name: "Dr. Anil Kumar",
+      name: "Dr . Feaculity of pharmacy",
       role: "Finance Chair",
-      email: "anil.kumar@university.edu",
+      email: "Feaculity of pharmacy@university.edu",
       phone: "+91 6543210987",
       image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80"
     }

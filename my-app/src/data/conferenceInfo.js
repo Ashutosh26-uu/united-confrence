@@ -1,5 +1,5 @@
 const conferenceInfo = {
-  name: "National Pharmacy Conference 2025 (United University) ",
+  name: "United University Pharmacy Conference 2025 (United University) ",
   theme: "Innovative Approaches in Pharmaceutical Research and Patient Care: Bridging Science and Practice",
   dates: {
     conference: "october 15-17, 2025",

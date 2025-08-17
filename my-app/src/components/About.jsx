@@ -35,7 +35,7 @@ const About = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">National Pharmacy Conference 2025</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4"> United university Pharmacy Conference 2025</h3>
             <p className="text-gray-600 mb-6">
               The United university Pharmacy Conference 2025 is a premier event that brings together pharmaceutical professionals, 
               researchers, educators, and students to share knowledge, innovations, and best practices in the field of pharmacy.
@@ -95,7 +95,7 @@ const About = () => {
             </div>
             <div className="flex justify-center">
               <div className="bg-gray-200 border-2 border-dashed rounded-xl w-64 h-64 flex items-center justify-center text-gray-500">
-                University Logo
+                <p className="text-center">Image Placeholder</p>
               </div>
             </div>
           </div>
