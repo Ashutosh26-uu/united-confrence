@@ -170,7 +170,7 @@ const Abstracts = () => {
               <a 
                 href="tel:+911234567890" 
                 className="bg-transparent border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-indigo-600 transition-colors text-center"
-              >
+                >
                 Call Us
               </a>
             </div>

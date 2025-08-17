@@ -4,7 +4,7 @@ import { Calendar, Clock, MapPin, Users, BookOpen, Coffee } from 'lucide-react';
 const Program = () => {
   const conferenceDays = [
     {
-      date: "March 15, 2025",
+      date: "august 15, 2025",
       day: "Day 1 - Friday",
       events: [
         {

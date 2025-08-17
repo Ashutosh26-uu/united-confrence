@@ -32,37 +32,26 @@ This is a responsive website for the National Pharmacy Conference 2025 hosted by
 1. **Prerequisites**: Make sure you have Node.js installed on your system
 
 2. **Navigate to project directory**:
-   ```
    cd my-app
-   ```
 
 3. **Install dependencies**:
-   ```
    npm install
-   ```
 
 4. **Start development server**:
-   ```
    npm run dev
-   ```
 
 5. **Open in browser**: Visit `http://localhost:5173` in your browser
 
 ## For Production Deployment
 
 1. **Create production build**:
-   ```
    npm run build
-   ```
 
 2. **Preview production build**:
-   ```
    npm run preview
-   ```
 
 ## Project Structure
 
-```
 my-app/
 ├── public/                 # Static assets
 │   ├── images/             # Image files
@@ -79,18 +68,15 @@ my-app/
 ├── package.json            # Project dependencies and scripts
 ├── tailwind.config.js      # TailwindCSS configuration
 └── postcss.config.js       # PostCSS configuration
-```
 
 ## Troubleshooting
 
 If you encounter issues with the development server:
 
 1. Make sure all dependencies are installed: `npm install`
-2. Clear node_modules and reinstall: 
-   ```
+2. Clear node_modules and reinstall:
    rm -rf node_modules package-lock.json
    npm install
-   ```
 3. Check that Node.js is properly installed on your system
 
 ## Customization
