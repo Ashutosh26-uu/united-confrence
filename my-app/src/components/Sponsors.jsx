@@ -1,7 +1,17 @@
 import React from 'react';
 import { Handshake, Trophy, Users } from 'lucide-react';
 
+const GRID_COLUMN_MAP = {
+  'Platinum Sponsors': 'md:grid-cols-2',
+  'Gold Sponsors': 'md:grid-cols-3',
+  'Silver Sponsors': 'md:grid-cols-4',
+  'Academic Partners': 'md:grid-cols-4'
+};
+
+const getGridColumns = (level) => GRID_COLUMN_MAP[level] || 'md:grid-cols-4';
+
 const Sponsors = () => {
+
   const sponsorLevels = [
     {
       level: "Platinum Sponsors",
@@ -50,7 +60,7 @@ const Sponsors = () => {
   ];
 
   return (
-    <section id="sponsors" className="py-16 bg-white">
+    <section id="sponsors" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Sponsors</h2>
@@ -61,17 +71,17 @@ const Sponsors = () => {
         </div>
 
         <div className="space-y-16">
-          {sponsorLevels.map((level, levelIndex) => (
-            <div key={levelIndex}>
+          {sponsorLevels.map((level) => (
+            <div key={level.level}>
               <div className="flex items-center justify-center mb-8">
                 <div className="mr-3">
                   {level.icon}
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">{level.level}</h3>
               </div>
-              <div className={`grid grid-cols-1 ${level.level === 'Platinum Sponsors' ? 'md:grid-cols-2' : level.level === 'Gold Sponsors' ? 'md:grid-cols-3' : 'md:grid-cols-4'} gap-8`}>
-                {level.sponsors.map((sponsor, sponsorIndex) => (
-                  <div key={sponsorIndex} className="flex flex-col items-center">
+              <div className={`grid grid-cols-1 ${getGridColumns(level.level)} gap-8`}>
+                {level.sponsors.map((sponsor) => (
+                  <div key={sponsor.name} className="flex flex-col items-center">
                     <div className="bg-gray-100 border-2 border-dashed rounded-xl w-full h-24 flex items-center justify-center text-gray-500 mb-4">
                       {sponsor.logo.includes('placehold') ? (
                         <span className="text-center px-2">{sponsor.name}</span>
@@ -135,7 +145,7 @@ const Sponsors = () => {
           </div>
         </div>
 
-        <div className="mt-16 text-center">
+        <div className="mt-20 text-center">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">Media Partners</h3>
           <div className="flex flex-wrap justify-center gap-8">
             {["Pharma Times", "Journal of Pharmacy", "Health News Network", "Science Today"].map((partner, index) => (

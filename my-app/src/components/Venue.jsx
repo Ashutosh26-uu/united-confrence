@@ -39,12 +39,12 @@ const Venue = () => {
   ];
 
   return (
-    <section id="venue" className="py-16 bg-gray-50">
+    <section id="venue" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Venue & Accommodation</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Venue & Accommodation</h2>
           <div className="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Join us at United University for an unforgettable conference experience
           </p>
         </div>
@@ -55,18 +55,24 @@ const Venue = () => {
               <MapPin className="h-6 w-6 text-indigo-600 mr-2" />
               <h3 className="text-2xl font-bold text-gray-900">Conference Venue</h3>
             </div>
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <div className="h-96 bg-gray-200 border-2 border-dashed rounded-t-2xl flex items-center justify-center text-gray-500">
-                Google Maps Embed Placeholder
-                <br />
-                (Actual implementation would include Google Maps embed code)
-              </div>
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
+              <iframe
+                src="https://maps.google.com/maps?q=United+University+Rawaatpur+Jhwala+Prayagraj+Uttar+Pradesh&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="384"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="United University Location"
+              ></iframe>
               <div className="p-6">
-                <h4 className="text-xl font-bold text-gray-900 mb-2">United University Conference Center</h4>
+                <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">United University Conference Center</h4>
                 <p className="text-gray-700 mb-4">
                   Department of Pharmacy<br />
                   United University<br />
-                  Uttar Pradesh, India 201301
+                  Rawaatpur Jhwala, Near IIIT Allahabad<br />
+                  Prayagraj, Uttar Pradesh, India
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded">
@@ -77,8 +83,6 @@ const Venue = () => {
                   </span>
                   <span className="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded">
                     Seminar Rooms
-                  </span>
-                  <span className="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded">
                   </span>
                 </div>
               </div>
@@ -92,7 +96,7 @@ const Venue = () => {
             </div>
             <div className="space-y-6">
               {accommodationOptions.map((option, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+                <div key={option.name} className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 animate-float cursor-pointer">
                   <div className="flex justify-between items-start mb-3">
                     <h4 className="text-lg font-bold text-gray-900">{option.name}</h4>
                     <span className="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded">
@@ -101,12 +105,20 @@ const Venue = () => {
                   </div>
                   <p className="text-gray-700 mb-4">{option.description}</p>
                   <div className="flex flex-wrap gap-2">
-                    {option.amenities.map((amenity, amenityIndex) => (
-                      <span key={amenityIndex} className="flex items-center bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">
-                        <Wifi className="h-3 w-3 mr-1" />
-                        {amenity}
-                      </span>
-                    ))}
+                    {option.amenities.map((amenity, amenityIndex) => {
+                      const getAmenityIcon = () => {
+                        if (amenity.toLowerCase().includes('wifi')) return <Wifi className="h-3 w-3 mr-1" />;
+                        if (amenity.toLowerCase().includes('breakfast')) return <Utensils className="h-3 w-3 mr-1" />;
+                        if (amenity.toLowerCase().includes('restaurant')) return <Utensils className="h-3 w-3 mr-1" />;
+                        return <Hotel className="h-3 w-3 mr-1" />;
+                      };
+                      return (
+                        <span key={amenityIndex} className="flex items-center bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">
+                          {getAmenityIcon()}
+                          {amenity}
+                        </span>
+                      );
+                    })}
                   </div>
                 </div>
               ))}
@@ -123,7 +135,7 @@ const Venue = () => {
             <div className="bg-white rounded-2xl shadow-lg p-6">
               <div className="space-y-6">
                 {travelInfo.map((info, index) => (
-                  <div key={index} className="flex">
+                  <div key={info.mode} className="flex">
                     <div className="flex-shrink-0">
                       {info.mode === "By Air" && <Plane className="h-6 w-6 text-indigo-600" />}
                       {info.mode === "By Train" && <Car className="h-6 w-6 text-indigo-600" />}
@@ -175,7 +187,7 @@ const Venue = () => {
           </div>
         </div>
 
-        <div className="mt-16 bg-indigo-600 text-white rounded-2xl p-8 text-center">
+        <div className="mt-20 bg-indigo-600 text-white rounded-2xl p-8 sm:p-10 text-center">
           <h3 className="text-2xl font-bold mb-4">Need Assistance with Travel or Accommodation?</h3>
           <p className="text-indigo-100 mb-6 max-w-2xl mx-auto">
             Our hospitality team is here to help you with travel arrangements, hotel bookings, 

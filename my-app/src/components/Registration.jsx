@@ -45,7 +45,7 @@ const Registration = () => {
   ];
 
   return (
-    <section id="registration" className="py-16 bg-white">
+    <section id="registration" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Registration</h2>
@@ -145,13 +145,13 @@ const Registration = () => {
                   <div className="flex items-start">
                     <AlertCircle className="h-5 w-5 text-yellow-500 mt-0.5 mr-2 flex-shrink-0" />
                     <p className="text-gray-700 text-sm">
-                      <span className="font-semibold">Regular Registration:</span> Until august 10, 2025
+                      <span className="font-semibold">Regular Registration:</span> Until August 10, 2025
                     </p>
                   </div>
                   <div className="flex items-start">
                     <AlertCircle className="h-5 w-5 text-yellow-500 mt-0.5 mr-2 flex-shrink-0" />
                     <p className="text-gray-700 text-sm">
-                      <span className="font-semibold">On-site Registration:</span> october 15-17, 2025
+                      <span className="font-semibold">On-site Registration:</span> October 15-17, 2025
                     </p>
                   </div>
                 </div>

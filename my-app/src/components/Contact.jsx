@@ -11,30 +11,30 @@ const Contact = () => {
 
   const coordinators = [
     {
-      name: "Dr.Feaculity of pharmacy ",
+      name: "Dr. Faculty of Pharmacy",
       role: "Conference Chair",
-      email: "Feaculity of pharmacy@university.edu",
+      email: "faculty.pharmacy@university.edu",
       phone: "+91 9876543210",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80"
     },
     {
-      name: "Dr. Feaculity of pharmacy",
+      name: "Dr. Faculty of Pharmacy",
       role: "Program Chair",
-      email: "Feaculity of pharmacy@university.edu",
+      email: "faculty.pharmacy@university.edu",
       phone: "+91 8765432109",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80"
     },
     {
-      name: "Dr. Feaculity of pharmacy",
+      name: "Dr. Faculty of Pharmacy",
       role: "Scientific Chair",
-      email: "Feaculity of pharmacy@university.edu",
+      email: "faculty.pharmacy@university.edu",
       phone: "+91 7654321098",
       image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80"
     },
     {
-      name: "Dr . Feaculity of pharmacy",
+      name: "Dr. Faculty of Pharmacy",
       role: "Finance Chair",
-      email: "Feaculity of pharmacy@university.edu",
+      email: "faculty.pharmacy@university.edu",
       phone: "+91 6543210987",
       image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80"
     }
@@ -50,14 +50,20 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // In a real application, you would send the form data to a server here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    try {
+      // In a real application, you would send the form data to a server here
+      console.log('Form submitted:', formData);
+      // Replace alert with proper notification system in production
+      alert('Thank you for your message! We will get back to you soon.');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('Sorry, there was an error sending your message. Please try again.');
+    }
   };
 
   return (
-    <section id="contact" className="py-16 bg-gray-50">
+    <section id="contact" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Contact Us</h2>

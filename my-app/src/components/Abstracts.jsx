@@ -47,7 +47,7 @@ const Abstracts = () => {
   ];
 
   return (
-    <section id="abstracts" className="py-16 bg-gray-50">
+    <section id="abstracts" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Call for Abstracts</h2>
@@ -133,7 +133,7 @@ const Abstracts = () => {
                   <div className="flex items-start">
                     <AlertCircle className="h-5 w-5 text-yellow-500 mt-0.5 mr-2 flex-shrink-0" />
                     <p className="text-gray-700 text-sm">
-                      <span className="font-semibold">Notification:</span> may 30, 2025
+                      <span className="font-semibold">Notification:</span> March 30, 2025
                     </p>
                   </div>
                   <div className="flex items-start">
@@ -145,14 +145,14 @@ const Abstracts = () => {
                 </div>
               </div>
 
-              <button className="w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700 transition-colors">
+              <button className="w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700 hover:scale-105 transition-all duration-300 btn-interactive relative overflow-hidden">
                 Submit Abstract
               </button>
             </div>
           </div>
         </div>
 
-        <div className="mt-16 bg-indigo-600 text-white rounded-2xl p-8">
+        <div className="mt-20 bg-indigo-600 text-white rounded-2xl p-8 sm:p-10">
           <div className="flex flex-col md:flex-row items-center">
             <div className="flex-1 mb-6 md:mb-0 md:mr-6">
               <h3 className="text-2xl font-bold mb-2">Need Help?</h3>

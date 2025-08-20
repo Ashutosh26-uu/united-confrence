@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Calendar, FileText, User, CreditCard, MapPin } from 'lucide-react';
 
 const ImportantDates = () => {
-  const dates = [
+  const dates = useMemo(() => [
     {
       date: "October 15, 2024",
       title: "Abstract Submission Opens",
@@ -51,10 +51,10 @@ const ImportantDates = () => {
       description: "United University Conference Center, Uttar Pradesh",
       icon: <MapPin className="h-6 w-6" />
     }
-  ];
+  ], []);
 
   return (
-    <section id="dates" className="py-16 bg-white">
+    <section id="dates" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Important Dates</h2>
@@ -67,8 +67,8 @@ const ImportantDates = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {dates.map((item, index) => (
             <div 
-              key={index} 
-              className="bg-gradient-to-br from-indigo-50 to-white rounded-xl shadow-lg p-6 border border-indigo-100 hover:shadow-xl transition-shadow duration-300"
+              key={`${item.date}-${item.title}`} 
+              className="bg-gradient-to-br from-indigo-50 to-white rounded-xl shadow-lg p-6 border border-indigo-100 hover:shadow-xl hover:scale-105 hover:border-indigo-300 transition-all duration-300 cursor-pointer group"
             >
               <div className="flex items-center mb-4">
                 <div className="bg-indigo-100 p-2 rounded-lg text-indigo-600 mr-3">
@@ -84,7 +84,7 @@ const ImportantDates = () => {
           ))}
         </div>
 
-        <div className="mt-16 bg-indigo-50 rounded-2xl p-8">
+        <div className="mt-20 bg-indigo-50 rounded-2xl p-8 sm:p-10">
           <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Note</h3>
           <p className="text-gray-700 text-center max-w-3xl mx-auto">
             All deadlines are at 11:59 PM IST unless otherwise specified. 

@@ -4,7 +4,7 @@ import { Calendar, Clock, MapPin, Users, BookOpen, Coffee } from 'lucide-react';
 const Program = () => {
   const conferenceDays = [
     {
-      date: "august 15, 2025",
+      date: "August 15, 2025",
       day: "Day 1 - Friday",
       events: [
         {
@@ -205,7 +205,7 @@ const Program = () => {
   ];
 
   return (
-    <section id="program" className="py-16 bg-gray-50">
+    <section id="program" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Conference Program</h2>
@@ -307,7 +307,7 @@ const Program = () => {
           </div>
         </div>
 
-        <div className="mt-16 bg-white rounded-2xl shadow-lg p-8">
+        <div className="mt-20 bg-white rounded-2xl shadow-lg p-8 sm:p-10">
           <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Full Conference Schedule</h3>
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">

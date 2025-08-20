@@ -10,7 +10,12 @@ import SpeakersPage from './pages/SpeakersPage';
 import VenuePage from './pages/VenuePage';
 import SponsorsPage from './pages/SponsorsPage';
 import ContactPage from './pages/ContactPage';
-import NewsPage from './pages/NewsPage';
+import ScrollToTop from './components/ScrollToTop';
+import ProgressBar from './components/ProgressBar';
+
+
+import FloatingActions from './components/FloatingActions';
+
 import useDarkMode from './hooks/useDarkMode';
 
 function App() {
@@ -18,7 +23,10 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-white dark:bg-gray-900">
+      <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'dark bg-gray-900' : 'bg-white'}`}>
+
+
+        <ProgressBar />
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -29,14 +37,15 @@ function App() {
           <Route path="/venue" element={<VenuePage />} />
           <Route path="/sponsors" element={<SponsorsPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/news" element={<NewsPage />} />
+
+          <Route path="*" element={<div className="min-h-screen flex items-center justify-center"><h1 className="text-2xl">Page Not Found</h1></div>} />
         </Routes>
         <Footer />
+        <ScrollToTop />
+        <FloatingActions />
       </div>
-   </Router>
- );
+    </Router>
+  );
 }
-
-
 
 export default App;
