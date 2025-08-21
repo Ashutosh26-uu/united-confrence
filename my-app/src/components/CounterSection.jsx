@@ -8,9 +8,9 @@ const CounterSection = () => {
 
   const stats = [
     { icon: Users, label: 'Expected Attendees', target: 500, suffix: '+' },
-    { icon: Calendar, label: 'Conference Days', target: 3, suffix: '' },
-    { icon: Award, label: 'Expert Speakers', target: 25, suffix: '+' },
-    { icon: Globe, label: 'Universities', target: 50, suffix: '+' }
+    { icon: Calendar, label: 'Conference Days', target: 2, suffix: '' },
+    { icon: Award, label: 'Expert Speakers', target: 8, suffix: '+' },
+    { icon: Globe, label: 'Universities', target: 25, suffix: '+' }
   ];
 
   useEffect(() => {

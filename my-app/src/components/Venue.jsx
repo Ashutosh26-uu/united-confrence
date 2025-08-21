@@ -40,7 +40,7 @@ const Venue = () => {
 
   return (
     <section id="venue" className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Venue & Accommodation</h2>
           <div className="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
@@ -69,8 +69,8 @@ const Venue = () => {
               <div className="p-6">
                 <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">United University Conference Center</h4>
                 <p className="text-gray-700 mb-4">
-                  Department of Pharmacy<br />
-                  United University<br />
+                  Faculty of Pharmacy<br />
+                  United University Prayagraj<br />
                   Rawaatpur Jhwala, Near IIIT Allahabad<br />
                   Prayagraj, Uttar Pradesh, India
                 </p>
@@ -195,7 +195,7 @@ const Venue = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a 
-              href="mailto:uniteduniversity2025.edu" 
+              href="mailto:confpharm@uniteduniversity.edu.in" 
               className="bg-white text-indigo-600 font-bold py-3 px-6 rounded-lg hover:bg-indigo-50 transition-colors"
             >
               Email Accommodation Team

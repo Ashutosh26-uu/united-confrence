@@ -4,63 +4,39 @@ import { Calendar, FileText, User, CreditCard, MapPin } from 'lucide-react';
 const ImportantDates = () => {
   const dates = useMemo(() => [
     {
-      date: "October 15, 2024",
-      title: "Abstract Submission Opens",
-      description: "Researchers can begin submitting their abstracts for presentation consideration.",
-      icon: <FileText className="h-6 w-6" />
+      date: "7th to 8th November 2025",
+      title: "Conference Date",
+      description: "Two days of presentations, discussions, and networking.",
+      icon: <Calendar className="h-6 w-6" />
     },
     {
-      date: "January 15, 2025",
-      title: "Abstract Submission Deadline",
+      date: "15th October 2025",
+      title: "Last Date of Registration",
+      description: "Final date for conference registration. No extensions will be granted.",
+      icon: <CreditCard className="h-6 w-6" />
+    },
+    {
+      date: "10th October 2025",
+      title: "Deadline for Abstract Submission",
       description: "Final date for abstract submissions. No extensions will be granted.",
       icon: <FileText className="h-6 w-6" />
     },
     {
-      date: "January 30, 2025",
-      title: "Acceptance Notification",
+      date: "18th October 2025",
+      title: "Abstract Acceptance Notification",
       description: "Authors will be notified of their abstract acceptance status.",
       icon: <User className="h-6 w-6" />
-    },
-    {
-      date: "February 15, 2025",
-      title: "Early Bird Registration",
-      description: "Early bird registration rates available for conference attendance.",
-      icon: <CreditCard className="h-6 w-6" />
-    },
-    {
-      date: "March 10, 2025",
-      title: "Regular Registration Deadline",
-      description: "Final date for regular registration rates.",
-      icon: <CreditCard className="h-6 w-6" />
-    },
-    {
-      date: "March 12, 2025",
-      title: "Pre-conference Workshops",
-      description: "Specialized workshops for registered participants.",
-      icon: <Calendar className="h-6 w-6" />
-    },
-    {
-      date: "March 15-17, 2025",
-      title: "Main Conference",
-      description: "Three days of presentations, discussions, and networking.",
-      icon: <Calendar className="h-6 w-6" />
-    },
-    {
-      date: "March 15-17, 2025",
-      title: "Conference Venue",
-      description: "United University Conference Center, Uttar Pradesh",
-      icon: <MapPin className="h-6 w-6" />
     }
   ], []);
 
   return (
-    <section id="dates" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="dates" className="pt-24 pb-20 bg-white">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Important Dates</h2>
           <div className="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Mark your calendars for these important dates and deadlines for the National Pharmacy Conference 2025.
+            Mark your calendars for these important dates and deadlines for FIHTNFPS - 2025.
           </p>
         </div>
 

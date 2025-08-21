@@ -48,12 +48,12 @@ const Abstracts = () => {
 
   return (
     <section id="abstracts" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Call for Abstracts</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Call for Abstracts/ Full Length Paper</h2>
           <div className="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Submit your research abstracts for presentation at the United university Conference 2025
+            Submit your research abstracts for FIHTNFPS - 2025: Fostering Innovation for a Healthier Tomorrow
           </p>
         </div>
 
@@ -127,19 +127,19 @@ const Abstracts = () => {
                   <div className="flex items-start">
                     <AlertCircle className="h-5 w-5 text-yellow-500 mt-0.5 mr-2 flex-shrink-0" />
                     <p className="text-gray-700 text-sm">
-                      <span className="font-semibold">Deadline:</span> october 15, 2025
+                      <span className="font-semibold">Deadline:</span> 10th October 2025
                     </p>
                   </div>
                   <div className="flex items-start">
                     <AlertCircle className="h-5 w-5 text-yellow-500 mt-0.5 mr-2 flex-shrink-0" />
                     <p className="text-gray-700 text-sm">
-                      <span className="font-semibold">Notification:</span> March 30, 2025
+                      <span className="font-semibold">Notification:</span> 18th October 2025
                     </p>
                   </div>
                   <div className="flex items-start">
                     <AlertCircle className="h-5 w-5 text-yellow-500 mt-0.5 mr-2 flex-shrink-0" />
                     <p className="text-gray-700 text-sm">
-                      <span className="font-semibold">Presentation:</span> october 15-17, 2025
+                      <span className="font-semibold">Presentation:</span> 7th to 8th November 2025
                     </p>
                   </div>
                 </div>
@@ -162,7 +162,7 @@ const Abstracts = () => {
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
-                href=" united university pharmacy department .in " 
+                href="mailto:confpharm@uniteduniversity.edu.in" 
                 className="bg-white text-indigo-600 font-bold py-3 px-6 rounded-lg hover:bg-indigo-50 transition-colors text-center"
               >
                 Email Support

@@ -6,7 +6,7 @@ import CounterSection from '../components/CounterSection';
 
 const Home = () => {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Hero />
       <About />
       <CounterSection />

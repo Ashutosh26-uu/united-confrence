@@ -4,8 +4,8 @@ import { Calendar, Clock, MapPin, Users, BookOpen, Coffee } from 'lucide-react';
 const Program = () => {
   const conferenceDays = [
     {
-      date: "August 15, 2025",
-      day: "Day 1 - Friday",
+      date: "7th November 2025",
+      day: "Day 1 - Thursday",
       events: [
         {
           time: "08:00 - 09:00",
@@ -74,8 +74,8 @@ const Program = () => {
       ]
     },
     {
-      date: "March 16, 2025",
-      day: "Day 2 - Saturday",
+      date: "8th November 2025",
+      day: "Day 2 - Friday",
       events: [
         {
           time: "09:00 - 10:00",
@@ -121,56 +121,14 @@ const Program = () => {
           icon: <Coffee className="h-5 w-5" />
         },
         {
-          time: "16:00 - 18:00",
+          time: "16:00 - 17:30",
           title: "Panel Discussion: Career Opportunities in Pharmacy",
           location: "Main Auditorium",
           type: "panel",
           icon: <Users className="h-5 w-5" />
-        }
-      ]
-    },
-    {
-      date: "March 17, 2025",
-      day: "Day 3 - Sunday",
-      events: [
-        {
-          time: "09:00 - 10:00",
-          title: "Keynote Address: Regulatory Affairs in Pharmaceuticals",
-          speaker: "Dr. Amit Kumar",
-          location: "Main Auditorium",
-          type: "keynote",
-          icon: <Users className="h-5 w-5" />
         },
         {
-          time: "10:00 - 10:30",
-          title: "Tea Break",
-          location: "Lobby Area",
-          type: "break",
-          icon: <Coffee className="h-5 w-5" />
-        },
-        {
-          time: "10:30 - 12:30",
-          title: "Session 5: Hospital Pharmacy & Clinical Research",
-          location: "Main Auditorium",
-          type: "session",
-          icon: <BookOpen className="h-5 w-5" />
-        },
-        {
-          time: "12:30 - 13:30",
-          title: "Lunch Break",
-          location: "Dining Hall",
-          type: "break",
-          icon: <Coffee className="h-5 w-5" />
-        },
-        {
-          time: "13:30 - 15:00",
-          title: "Session 6: Recent Advances in Pharmaceutical Sciences",
-          location: "Main Auditorium",
-          type: "session",
-          icon: <BookOpen className="h-5 w-5" />
-        },
-        {
-          time: "15:00 - 16:00",
+          time: "17:30 - 18:00",
           title: "Closing Ceremony & Award Distribution",
           location: "Main Auditorium",
           type: "ceremony",
@@ -180,38 +138,16 @@ const Program = () => {
     }
   ];
 
-  const workshops = [
-    {
-      title: "Workshop on Drug Design & Molecular Modeling",
-      date: "March 12, 2025",
-      time: "09:00 - 17:00",
-      location: "Lab 101",
-      description: "Hands-on workshop on computational methods in drug design"
-    },
-    {
-      title: "Pharmaceutical Analysis Techniques",
-      date: "March 12, 2025",
-      time: "09:00 - 17:00",
-      location: "Lab 102",
-      description: "Advanced techniques in pharmaceutical analysis and quality control"
-    },
-    {
-      title: "Clinical Research & Good Clinical Practice",
-      date: "March 13, 2025",
-      time: "09:00 - 17:00",
-      location: "Seminar Hall A",
-      description: "Understanding clinical research protocols and regulatory compliance"
-    }
-  ];
+
 
   return (
     <section id="program" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Conference Program</h2>
           <div className="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore our comprehensive program featuring keynote speakers, research presentations, and interactive sessions
+            FIHTNFPS - 2025: Explore our comprehensive program featuring keynote speakers, research presentations, and interactive sessions
           </p>
         </div>
 
@@ -268,33 +204,6 @@ const Program = () => {
           </div>
 
           <div>
-            <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Pre-Conference Workshops</h3>
-              <div className="space-y-6">
-                {workshops.map((workshop, index) => (
-                  <div key={index} className="border border-gray-200 rounded-lg p-5 hover:border-indigo-300 transition-colors">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-2">{workshop.title}</h4>
-                    <div className="flex items-center text-sm text-gray-600 mb-1">
-                      <Calendar className="h-4 w-4 mr-1" />
-                      <span>{workshop.date}</span>
-                    </div>
-                    <div className="flex items-center text-sm text-gray-600 mb-1">
-                      <Clock className="h-4 w-4 mr-1" />
-                      <span>{workshop.time}</span>
-                    </div>
-                    <div className="flex items-center text-sm text-gray-600 mb-2">
-                      <MapPin className="h-4 w-4 mr-1" />
-                      <span>{workshop.location}</span>
-                    </div>
-                    <p className="text-sm text-gray-700">{workshop.description}</p>
-                  </div>
-                ))}
-              </div>
-              <button className="w-full mt-6 bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors">
-                Register for Workshops
-              </button>
-            </div>
-
             <div className="bg-indigo-600 text-white rounded-2xl p-8">
               <h3 className="text-xl font-bold mb-4">Download Program</h3>
               <p className="text-indigo-100 mb-4">

@@ -13,28 +13,28 @@ const Contact = () => {
     {
       name: "Dr. Faculty of Pharmacy",
       role: "Conference Chair",
-      email: "faculty.pharmacy@university.edu",
+      email: "confpharm@uniteduniversity.edu.in",
       phone: "+91 9876543210",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80"
     },
     {
       name: "Dr. Faculty of Pharmacy",
       role: "Program Chair",
-      email: "faculty.pharmacy@university.edu",
+      email: "confpharm@uniteduniversity.edu.in",
       phone: "+91 8765432109",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80"
     },
     {
       name: "Dr. Faculty of Pharmacy",
       role: "Scientific Chair",
-      email: "faculty.pharmacy@university.edu",
+      email: "confpharm@uniteduniversity.edu.in",
       phone: "+91 7654321098",
       image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80"
     },
     {
       name: "Dr. Faculty of Pharmacy",
       role: "Finance Chair",
-      email: "faculty.pharmacy@university.edu",
+      email: "confpharm@uniteduniversity.edu.in",
       phone: "+91 6543210987",
       image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80"
     }
@@ -64,7 +64,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Contact Us</h2>
           <div className="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
@@ -91,7 +91,14 @@ const Contact = () => {
                       <div className="space-y-1">
                         <div className="flex items-center">
                           <Mail className="h-4 w-4 text-gray-500 mr-2" />
-                          <a href={`mailto:${coordinator.email}`} className="text-gray-700 hover:text-indigo-600">
+                          <a 
+                            href={`mailto:${coordinator.email}?subject=UPHARMORA Conference Inquiry`} 
+                            className="text-gray-700 hover:text-indigo-600"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              window.location.href = `mailto:${coordinator.email}?subject=UPHARMORA Conference Inquiry`;
+                            }}
+                          >
                             {coordinator.email}
                           </a>
                         </div>
@@ -114,9 +121,10 @@ const Contact = () => {
                 <div className="flex items-start">
                   <MapPin className="h-5 w-5 text-indigo-200 mt-0.5 mr-3" />
                   <p className="text-indigo-100">
-                    Department of Pharmacy<br />
-                    United University<br />
-                    Uttar Pradesh, India 211012
+                    Faculty of Pharmacy<br />
+                    United University Prayagraj<br />
+                    Uttar Pradesh, India 211012<br />
+                    confpharm@uniteduniversity.edu.in
                   </p>
                 </div>
                 <div className="flex items-center">
@@ -125,7 +133,16 @@ const Contact = () => {
                 </div>
                 <div className="flex items-center">
                   <Mail className="h-5 w-5 text-indigo-200 mr-3" />
-                  <p className="text-indigo-100">united university .in</p>
+                  <a 
+                    href="mailto:confpharm@uniteduniversity.edu.in?subject=UPHARMORA Conference Inquiry" 
+                    className="text-indigo-100 hover:text-white transition-colors"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = 'mailto:confpharm@uniteduniversity.edu.in?subject=UPHARMORA Conference Inquiry';
+                    }}
+                  >
+                    confpharm@uniteduniversity.edu.in
+                  </a>
                 </div>
               </div>
             </div>
@@ -235,13 +252,19 @@ const Contact = () => {
                 <div className="border-b border-gray-200 pb-4">
                   <h4 className="font-bold text-gray-900">How do I register for the conference?</h4>
                   <p className="text-gray-700 mt-1">
-                    You can register online through our registration page. Early bird rates are available until February 15, 2025.
+                    You can register online through our registration page. Registration deadline is 15th October 2025.
                   </p>
                 </div>
                 <div className="border-b border-gray-200 pb-4">
                   <h4 className="font-bold text-gray-900">What is the deadline for abstract submission?</h4>
                   <p className="text-gray-700 mt-1">
-                    The deadline for abstract submission is January 15, 2025.
+                    The deadline for abstract submission is 10th October 2025.
+                  </p>
+                </div>
+                <div className="border-b border-gray-200 pb-4">
+                  <h4 className="font-bold text-gray-900">When is the conference taking place?</h4>
+                  <p className="text-gray-700 mt-1">
+                    FIHTNFPS - 2025 will be held on 7th to 8th November 2025 (2 days).
                   </p>
                 </div>
                 <div>
