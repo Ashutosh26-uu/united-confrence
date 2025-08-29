@@ -1,0 +1,218 @@
+.registration {
+  background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f0f8ff"/></svg>');
+  background-size: cover;
+}
+
+.registration-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.registration-header h2 {
+  background: #f97316;
+  color: white;
+  padding: 15px 30px;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+
+.registration-header p {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.certificate-section {
+  margin-bottom: 40px;
+}
+
+.certificate-section h3 {
+  background: #f97316;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+
+.certificate-section p {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.fee-section {
+  margin-bottom: 40px;
+}
+
+.fee-section h3 {
+  background: #f97316;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+
+.fee-table {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: #f97316;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.table-header > div {
+  padding: 15px 10px;
+  border-right: 1px solid rgba(255,255,255,0.3);
+}
+
+.table-header > div:last-child {
+  border-right: none;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-row > div {
+  padding: 15px 10px;
+  text-align: center;
+  border-right: 1px solid #e9ecef;
+}
+
+.table-row > div:last-child {
+  border-right: none;
+}
+
+.category-col {
+  background: #fff5f5;
+  font-weight: 600;
+  color: #333;
+}
+
+.early-bird-col,
+.on-spot-col {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.payment-section {
+  margin-bottom: 40px;
+}
+
+.payment-section h3 {
+  background: #f97316;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+
+.payment-section p {
+  color: #666;
+  font-size: 1rem;
+}
+
+.registration-form {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-top: 40px;
+}
+
+.registration-form h3 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #f97316;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  background: #f97316;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #ea580c;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .table-header,
+  .table-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .table-header > div,
+  .table-row > div {
+    border-right: none;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .registration-form {
+    padding: 30px 20px;
+  }
+  
+  .registration-header h2,
+  .certificate-section h3,
+  .fee-section h3,
+  .payment-section h3 {
+    font-size: 1.3rem;
+    padding: 10px 20px;
+  }
+}

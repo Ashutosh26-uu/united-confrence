@@ -1,0 +1,114 @@
+.organizing-committee {
+  background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f0f8ff"/></svg>');
+  background-size: cover;
+}
+
+.committee-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.committee-header h2 {
+  background: linear-gradient(135deg, #8B4513, #D2691E);
+  color: white;
+  padding: 20px 60px;
+  border-radius: 50px;
+  font-size: 2rem;
+  font-weight: bold;
+  display: inline-block;
+  letter-spacing: 2px;
+  border: 3px solid #DAA520;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.committee-structure {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.patron-section,
+.chairperson-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.committee-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.committee-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border: 2px solid #e9ecef;
+  transition: transform 0.3s ease;
+}
+
+.committee-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.patron-card {
+  border: 3px solid #DAA520;
+  background: linear-gradient(135deg, #FFF8DC, #FFFACD);
+}
+
+.chairperson-card {
+  border: 3px solid #C0C0C0;
+  background: linear-gradient(135deg, #F8F8FF, #F0F8FF);
+}
+
+.committee-card h3 {
+  color: #2c3e50;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.committee-card p {
+  color: #666;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.patron-card h3,
+.chairperson-card h3 {
+  color: #8B4513;
+}
+
+.patron-card p,
+.chairperson-card p {
+  color: #8B4513;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .committee-header h2 {
+    font-size: 1.5rem;
+    padding: 15px 30px;
+  }
+  
+  .committee-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .committee-card {
+    padding: 20px;
+  }
+  
+  .committee-card h3 {
+    font-size: 1.2rem;
+  }
+}

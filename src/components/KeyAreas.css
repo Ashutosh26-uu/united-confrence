@@ -1,0 +1,85 @@
+.key-areas {
+    background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f0f8ff"/></svg>');
+    background-size: cover;
+    padding: 80px 0;
+}
+
+.key-areas-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.key-areas-header h2 {
+    background: #f97316;
+    color: white;
+    padding: 15px 30px;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    display: inline-block;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.thrust-areas-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.thrust-item {
+    display: flex;
+    align-items: center;
+    padding: 20px 25px;
+    background: rgba(249, 115, 22, 0.05);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border-left: 4px solid #f97316;
+}
+
+.thrust-item:hover {
+    background: rgba(249, 115, 22, 0.1);
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(249, 115, 22, 0.2);
+}
+
+.thrust-arrow {
+    color: #f97316;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-right: 20px;
+    min-width: 25px;
+}
+
+.thrust-text {
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .key-areas {
+        padding: 60px 0;
+    }
+
+    .thrust-areas-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .thrust-item {
+        padding: 15px 20px;
+    }
+
+    .thrust-text {
+        font-size: 1rem;
+    }
+
+    .key-areas-header h2 {
+        font-size: 1.5rem;
+        padding: 12px 25px;
+    }
+}

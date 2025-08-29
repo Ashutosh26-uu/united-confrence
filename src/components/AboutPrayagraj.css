@@ -1,0 +1,235 @@
+.about-prayagraj {
+  background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23fff8e1"/></svg>');
+  background-size: cover;
+}
+
+.prayagraj-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.prayagraj-container h2 {
+  background: #f97316;
+  color: white;
+  padding: 20px 40px;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  display: inline-block;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.city-description {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+}
+
+.city-description p {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.city-description strong {
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.tourist-section {
+  margin-bottom: 50px;
+}
+
+.tourist-section h3 {
+  background: #1e40af;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  display: inline-block;
+  letter-spacing: 1px;
+  border-radius: 8px;
+}
+
+.tourist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.tourist-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #f97316;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tourist-card-with-image {
+  min-height: 250px;
+  padding: 0;
+  border-left: none;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.tourist-card-overlay {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(0.3px);
+  padding: 25px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 12px;
+  border-left: 5px solid #f97316;
+  margin: 0;
+}
+
+.tourist-card-with-image .tourist-card-overlay {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.45) 100%);
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.02);
+  backdrop-filter: blur(1px);
+}
+
+.tourist-card-with-image .tourist-card-overlay h4 {
+  color: #1e40af;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.tourist-card-with-image .tourist-card-overlay .description {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.tourist-card-with-image .tourist-card-overlay .distance {
+  color: #f97316;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-style: italic;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.tourist-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tourist-card-with-image:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.tourist-card h4,
+.tourist-card-overlay h4 {
+  color: #1e40af;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.tourist-card .description,
+.tourist-card-overlay .description {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.tourist-card .distance,
+.tourist-card-overlay .distance {
+  color: #f97316;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.visit-info h3 {
+  background: #16a34a;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  display: inline-block;
+  letter-spacing: 1px;
+  border-radius: 8px;
+}
+
+.visit-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.visit-item {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #16a34a;
+}
+
+.visit-item h4 {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.visit-item p {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .prayagraj-container h2 {
+    font-size: 1.8rem;
+    padding: 15px 25px;
+  }
+
+  .city-description {
+    padding: 25px;
+  }
+
+  .tourist-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tourist-card-with-image {
+    min-height: 180px;
+  }
+
+  .tourist-card-overlay {
+    padding: 20px;
+  }
+
+  .visit-details {
+    grid-template-columns: 1fr;
+  }
+
+  .tourist-section h3,
+  .visit-info h3 {
+    font-size: 1.5rem;
+    padding: 12px 20px;
+  }
+}

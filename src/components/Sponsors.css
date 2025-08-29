@@ -1,0 +1,97 @@
+.sponsors {
+  background: #f8f9fa;
+}
+
+.sponsor-levels {
+  margin-bottom: 60px;
+}
+
+.sponsor-level {
+  margin-bottom: 50px;
+}
+
+.sponsor-level h3 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.platinum { color: #9b59b6; }
+.gold { color: #f39c12; }
+.silver { color: #95a5a6; }
+.bronze { color: #d35400; }
+
+.sponsors-grid {
+  display: grid;
+  gap: 25px;
+}
+
+.platinum-grid { grid-template-columns: 1fr; }
+.gold-grid { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
+.silver-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.bronze-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+
+.sponsor-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.sponsor-card:hover {
+  transform: translateY(-5px);
+}
+
+.sponsor-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.platinum-card .sponsor-logo {
+  background: linear-gradient(135deg, #9b59b6, #8e44ad);
+  color: white;
+  font-size: 2rem;
+}
+
+.gold-card .sponsor-logo {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  color: white;
+}
+
+.silver-card .sponsor-logo {
+  background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+  color: white;
+}
+
+.bronze-card .sponsor-logo {
+  background: linear-gradient(135deg, #d35400, #c0392b);
+  color: white;
+}
+
+.sponsor-card p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.become-sponsor {
+  text-align: center;
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.become-sponsor h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.become-sponsor p {
+  color: #666;
+  margin-bottom: 25px;
+}
