@@ -188,7 +188,7 @@ const Navbar = () => {
                             {actionButtons.map((button, index) => (
                                 <button
                                     key={index}
-                                    className={`nav-button ${button.variant === 'secondary' ? 'secondary' : ''}`}
+                                    className={`nav-button ${button.variant === 'secondary' ? 'secondary' : ''} ${button.variant === 'tertiary' ? 'tertiary' : ''}`}
                                     onClick={button.onClick}
                                 >
                                     {button.icon}
@@ -224,7 +224,7 @@ const Navbar = () => {
                     {actionButtons.map((button, index) => (
                         <button
                             key={`mobile-btn-${index}`}
-                            className={`nav-button ${button.variant === 'secondary' ? 'secondary' : ''}`}
+                            className={`nav-button ${button.variant === 'secondary' ? 'secondary' : ''} ${button.variant === 'tertiary' ? 'tertiary' : ''}`}
                             onClick={() => {
                                 button.onClick();
                                 toggleMenu();

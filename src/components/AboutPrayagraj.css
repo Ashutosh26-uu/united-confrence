@@ -76,17 +76,26 @@
 }
 
 .tourist-card-with-image {
-  min-height: 250px;
+  min-height: 300px;
   padding: 0;
   border-left: none;
   background-size: cover !important;
-  background-position: center !important;
+  background-position: center center !important;
   background-repeat: no-repeat !important;
+  background-attachment: scroll;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 .tourist-card-overlay {
-  background: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(0.3px);
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(0.5px);
   padding: 25px;
   height: 100%;
   display: flex;
@@ -95,12 +104,13 @@
   border-radius: 12px;
   border-left: 5px solid #f97316;
   margin: 0;
+  transition: all 0.3s ease;
 }
 
 .tourist-card-with-image .tourist-card-overlay {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.45) 100%);
-  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.02);
-  backdrop-filter: blur(1px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.4) 100%);
+  backdrop-filter: blur(0.5px);
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
 }
 
 .tourist-card-with-image .tourist-card-overlay h4 {
