@@ -360,6 +360,283 @@
     font-size: 1.1rem;
 }
 
+/* Mobile-First Responsive Design */
+/* Base mobile styles */
+.navbar {
+  padding: 0.6rem 0;
+}
+
+.navbar__container {
+  padding: 0 1rem;
+}
+
+.logo-img {
+  height: 35px;
+}
+
+.logo-title {
+  font-size: 1.2rem;
+}
+
+.logo-subtitle {
+  font-size: 0.8rem;
+}
+
+.nav-links {
+  gap: 0.25rem;
+}
+
+.nav-link {
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+.nav-button {
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  min-width: 80px;
+}
+
+/* Mobile menu toggle - hidden by default */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.navbar__toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: white;
+  margin: 2px 0;
+  transition: all 0.3s ease;
+  border-radius: 1px;
+}
+
+.navbar__toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar__toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.navbar__mobile {
+  display: none;
+}
+
+.mobile-buttons {
+  display: none;
+}
+
+/* Small tablets (576px and up) */
+@media (min-width: 576px) {
+  .navbar {
+    padding: 0.7rem 0;
+  }
+  
+  .navbar__container {
+    padding: 0 1.25rem;
+  }
+  
+  .logo-img {
+    height: 38px;
+  }
+  
+  .logo-title {
+    font-size: 1.3rem;
+  }
+  
+  .logo-subtitle {
+    font-size: 0.85rem;
+  }
+  
+  .nav-links {
+    gap: 0.3rem;
+  }
+  
+  .nav-link {
+    padding: 0.65rem 0.9rem;
+    font-size: 0.95rem;
+  }
+  
+  .nav-button {
+    padding: 0.65rem 1.2rem;
+    font-size: 0.9rem;
+    min-width: 90px;
+  }
+}
+
+/* Tablets (768px and up) */
+@media (min-width: 768px) {
+  .navbar {
+    padding: 0.75rem 0;
+  }
+  
+  .navbar__container {
+    padding: 0 1.5rem;
+  }
+  
+  .logo-img {
+    height: 40px;
+  }
+  
+  .logo-title {
+    font-size: 1.4rem;
+  }
+  
+  .logo-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .nav-links {
+    gap: 0.4rem;
+  }
+  
+  .nav-link {
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .nav-button {
+    padding: 0.7rem 1.3rem;
+    font-size: 0.95rem;
+    min-width: 100px;
+  }
+}
+
+/* Show mobile menu on smaller screens */
+@media (max-width: 992px) {
+  .navbar__desktop {
+    display: none;
+  }
+
+  .navbar__toggle {
+    display: flex;
+  }
+
+  .mobile-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .navbar__mobile {
+    display: block;
+    position: fixed;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(2, 48, 107, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 2rem 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+
+  .navbar__mobile.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Laptops (992px and up) */
+@media (min-width: 992px) {
+  .navbar {
+    padding: 0.8rem 0;
+  }
+  
+  .navbar__container {
+    padding: 0 2rem;
+  }
+  
+  .logo-img {
+    height: 42px;
+  }
+  
+  .logo-title {
+    font-size: 1.45rem;
+  }
+  
+  .logo-subtitle {
+    font-size: 0.92rem;
+  }
+  
+  .nav-links {
+    gap: 0.45rem;
+  }
+  
+  .nav-link {
+    padding: 0.75rem 1.1rem;
+    font-size: 1rem;
+  }
+  
+  .nav-button {
+    padding: 0.8rem 1.7rem;
+    font-size: 1rem;
+    min-width: 120px;
+  }
+}
+
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+  .navbar {
+    padding: 0.8rem 0;
+  }
+  
+  .navbar__container {
+    padding: 0 2.5rem;
+  }
+  
+  .logo-img {
+    height: 45px;
+  }
+  
+  .logo-title {
+    font-size: 1.5rem;
+  }
+  
+  .logo-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .nav-links {
+    gap: 0.5rem;
+  }
+  
+  .nav-link {
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+  }
+  
+  .nav-button {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+    min-width: 130px;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
     .nav-links {

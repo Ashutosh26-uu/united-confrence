@@ -1,6 +1,19 @@
 .registration {
-  background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f0f8ff"/></svg>');
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #667eea 100%);
   background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.registration::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+  opacity: 0.3;
 }
 
 .registration-container {
@@ -9,7 +22,7 @@
 }
 
 .registration-header h2 {
-  background: #f97316;
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
   color: white;
   padding: 15px 30px;
   font-size: 2rem;
@@ -17,12 +30,21 @@
   margin-bottom: 15px;
   display: inline-block;
   letter-spacing: 1px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .registration-header p {
-  color: #666;
+  color: #000000;
   font-size: 1.1rem;
   margin-bottom: 40px;
+  text-shadow: none;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: inline-block;
 }
 
 .certificate-section {
@@ -30,7 +52,7 @@
 }
 
 .certificate-section h3 {
-  background: #f97316;
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
   color: white;
   padding: 12px 25px;
   font-size: 1.5rem;
@@ -38,13 +60,20 @@
   margin-bottom: 15px;
   display: inline-block;
   letter-spacing: 1px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
 }
 
 .certificate-section p {
-  color: #666;
+  color: #000000;
   font-size: 1rem;
   line-height: 1.6;
   text-align: justify;
+  text-shadow: none;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
 }
 
 .fee-section {
@@ -52,7 +81,7 @@
 }
 
 .fee-section h3 {
-  background: #f97316;
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
   color: white;
   padding: 12px 25px;
   font-size: 1.5rem;
@@ -60,30 +89,32 @@
   margin-bottom: 25px;
   display: inline-block;
   letter-spacing: 1px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
 }
 
 .fee-table {
   background: white;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .table-header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  background: #f97316;
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
   color: white;
   font-weight: bold;
   text-align: center;
 }
 
-.table-header > div {
+.table-header>div {
   padding: 15px 10px;
-  border-right: 1px solid rgba(255,255,255,0.3);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.table-header > div:last-child {
+.table-header>div:last-child {
   border-right: none;
 }
 
@@ -97,13 +128,13 @@
   border-bottom: none;
 }
 
-.table-row > div {
+.table-row>div {
   padding: 15px 10px;
   text-align: center;
   border-right: 1px solid #e9ecef;
 }
 
-.table-row > div:last-child {
+.table-row>div:last-child {
   border-right: none;
 }
 
@@ -124,7 +155,7 @@
 }
 
 .payment-section h3 {
-  background: #f97316;
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
   color: white;
   padding: 12px 25px;
   font-size: 1.5rem;
@@ -132,18 +163,67 @@
   margin-bottom: 15px;
   display: inline-block;
   letter-spacing: 1px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
 }
 
 .payment-section p {
-  color: #666;
+  color: #000000;
   font-size: 1rem;
+  text-shadow: none;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+}
+
+.registr.flyer-section {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.flyer-section h3 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.download-container {
+  display: flex;
+  justify-content: center;
+}
+
+.download-btn {
+  background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+  color: white;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+.download-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+}
+
+.download-icon {
+  font-size: 1.2rem;
 }
 
 .registration-form {
   background: white;
   padding: 40px;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   margin-top: 40px;
 }
 
@@ -192,22 +272,88 @@
   transform: translateY(-2px);
 }
 
+.google-form-container {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.google-form-container p {
+  color: #000000;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  opacity: 1;
+  text-shadow: none;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.register-now-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.register-now-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+  background: linear-gradient(45deg, #764ba2, #667eea);
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+}
+
+.btn-arrow {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.register-now-btn:hover .btn-arrow {
+  transform: translateX(5px);
+}
+
+.form-note {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
 @media (max-width: 768px) {
+
   .table-header,
   .table-row {
     grid-template-columns: 1fr;
   }
-  
-  .table-header > div,
-  .table-row > div {
+
+  .table-header>div,
+  .table-row>div {
     border-right: none;
     border-bottom: 1px solid #e9ecef;
   }
-  
+
   .registration-form {
     padding: 30px 20px;
   }
-  
+
   .registration-header h2,
   .certificate-section h3,
   .fee-section h3,

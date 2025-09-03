@@ -24,8 +24,8 @@ const Header = () => {
       const scrollPosition = window.scrollY;
       setIsScrolled(scrollPosition > 50);
 
-      // Determine active section
-      const sections = ['home', 'prayagraj', 'key-areas', 'important-dates', 'papers', 'registration', 'venue', 'speakers', 'sponsors'];
+      // Determine active section - updated sequence
+      const sections = ['home', 'key-areas', 'important-dates', 'papers', 'registration', 'venue', 'speakers', 'organizing-committee', 'contact'];
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -60,72 +60,78 @@ const Header = () => {
       <div className="nav-container">
         <div className="logo" onClick={() => scrollToSection('home')}>
           <img src="/images/uulogo1.png" alt="United university confrence Logo" className="logo-image" />
-          <h2>UPHARMORA - 1.0</h2>
+          <h2 style={{ whiteSpace: 'nowrap' }}>UPHARMORA 1.0</h2>
         </div>
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-          <a
-            href="#home"
-            className={activeSection === 'home' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}
-          >
-            Home
-          </a>
-          <a
-            href="#prayagraj"
-            className={activeSection === 'prayagraj' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); scrollToSection('prayagraj'); }}
-          >
-            Prayagraj
-          </a>
-          <a
-            href="#key-areas"
-            className={activeSection === 'key-areas' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); scrollToSection('key-areas'); }}
-          >
-            Key Areas
-          </a>
-          <a
-            href="#important-dates"
-            className={activeSection === 'important-dates' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); scrollToSection('important-dates'); }}
-          >
-            Dates
-          </a>
-          <a
-            href="#papers"
-            className={activeSection === 'papers' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); scrollToSection('papers'); }}
-          >
-            Papers
-          </a>
-          <a
-            href="#registration"
-            className={activeSection === 'registration' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); scrollToSection('registration'); }}
-          >
-            Registration
-          </a>
-          <a
-            href="#venue"
-            className={activeSection === 'venue' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); scrollToSection('venue'); }}
-          >
-            Venue
-          </a>
-          <a
-            href="#speakers"
-            className={activeSection === 'speakers' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); scrollToSection('speakers'); }}
-          >
-            Speakers
-          </a>
-          <a
-            href="#sponsors"
-            className={activeSection === 'sponsors' ? 'active' : ''}
-            onClick={(e) => { e.preventDefault(); scrollToSection('sponsors'); }}
-          >
-            Sponsors
-          </a>
+          <div className="nav-left">
+            <a
+              href="#home"
+              className={activeSection === 'home' ? 'active' : ''}
+              onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}
+            >
+              Home
+            </a>
+            <a
+              href="#key-areas"
+              className={activeSection === 'key-areas' ? 'active' : ''}
+              onClick={(e) => { e.preventDefault(); scrollToSection('key-areas'); }}
+            >
+              Key Areas
+            </a>
+            <a
+              href="#important-dates"
+              className={activeSection === 'important-dates' ? 'active' : ''}
+              onClick={(e) => { e.preventDefault(); scrollToSection('important-dates'); }}
+            >
+              Dates
+            </a>
+          </div>
+          <div className="nav-center">
+            <a
+              href="#papers"
+              className={activeSection === 'papers' ? 'active' : ''}
+              onClick={(e) => { e.preventDefault(); scrollToSection('papers'); }}
+            >
+              Papers
+            </a>
+            <a
+              href="#registration"
+              className={activeSection === 'registration' ? 'active' : ''}
+              onClick={(e) => { e.preventDefault(); scrollToSection('registration'); }}
+            >
+              Registration
+            </a>
+            <a
+              href="#venue"
+              className={activeSection === 'venue' ? 'active' : ''}
+              onClick={(e) => { e.preventDefault(); scrollToSection('venue'); }}
+            >
+              Venue
+            </a>
+          </div>
+          <div className="nav-right">
+            <a
+              href="#speakers"
+              className={activeSection === 'speakers' ? 'active' : ''}
+              onClick={(e) => { e.preventDefault(); scrollToSection('speakers'); }}
+            >
+              Speakers
+            </a>
+            <a
+              href="#organizing-committee"
+              className={activeSection === 'organizing-committee' ? 'active' : ''}
+              onClick={(e) => { e.preventDefault(); scrollToSection('organizing-committee'); }}
+            >
+              Committee
+            </a>
+            <a
+              href="#contact"
+              className={activeSection === 'contact' ? 'active' : ''}
+              onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}
+            >
+              Contact
+            </a>
+          </div>
         </nav>
         <div
           className={`menu-toggle ${isMenuOpen ? 'menu-open' : ''}`}

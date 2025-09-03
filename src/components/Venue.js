@@ -49,22 +49,28 @@ const Venue = () => {
       </div>
 
       <div className="accommodation">
-        <h3>Nearby Accommodation</h3>
-        <div className="hotels-grid">
-          <div className="hotel-card">
-            <h4>Hotel Kanha Shyam</h4>
-            <p>15 km from venue • ★★★★☆</p>
-            <p>Contact: +91-532-246-0123</p>
+        <h3>Accommodation facilities</h3>
+        <div className="accommodation-content">
+          <p className="accommodation-intro">
+            <strong></strong> Limited seats are available for accommodation within the campus. The details of the hostels are given below:
+          </p>
+          <p className="accommodation-note">
+            (accommodation facility both for boys and girls separately).
+          </p>
+
+          <div className="accommodation-details">
+            <ul>
+              <li>Non-AC room with double occupancy at boys campus hostel - approximately Rs.700 per person per day.</li>
+              <li>Non-AC rooms with double occupancy at girls' hostel - approximately Rs.700 per person per day (approx. Rs.1000 for single occupancy).</li>
+              <li>The booking of the rooms will be based on a first come first serve basis. Registered delegates can send an E-mail request to <strong>confpharm@uniteduniversity.edu.in</strong></li>
+              <li>Mention the registration number and other details in the E-mail query.</li>
+              <li>For any queries contact to: Mr. Vineet srivstava (Mobile no: +91 8960277835)</li>
+              <li>The mode of payment is only through a Debit card/NEFT/UPI on same account at the website/registration link.</li>
+            </ul>
           </div>
-          <div className="hotel-card">
-            <h4>Hotel Yatrik</h4>
-            <p>16 km from venue • ★★★☆☆</p>
-            <p>Contact: +91-532-242-5678</p>
-          </div>
-          <div className="hotel-card">
-            <h4>Hotel Rama Continental</h4>
-            <p>15 km from venue • ★★★☆☆</p>
-            <p>Contact: +91-532-260-9012</p>
+
+          <div className="accommodation-note-important">
+            <p><strong>Note:</strong> Mandatory to register for <strong>FIHTNFPS – 2025</strong> conference to book the campus hostel accommodation.</p>
           </div>
         </div>
       </div>

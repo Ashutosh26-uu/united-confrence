@@ -31,6 +31,18 @@ body {
   min-height: 100vh;
   overflow: hidden;
   position: relative;
+  padding-top: 0;
+  /* Remove extra padding from container */
+}
+
+/* Welcome Section with Slideshow */
+.welcome-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  /* Remove padding from slideshow section */
+  margin: 0;
 }
 
 /* Hero Section */
@@ -74,16 +86,33 @@ body {
   margin: 0 auto 2rem;
 }
 
-.hero-title {
-  font-size: 3.5rem;
-  font-weight: 800;
+.slide-content h1 {
+  font-size: 4.5rem;
+  font-weight: 700;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   line-height: 1.2;
+  animation: titleGlow 3s ease-in-out infinite alternate;
+  background: linear-gradient(45deg, #fff, #4cc9f0, #fff);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes titleGlow {
+  0% {
+    background-position: 0% 50%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(76, 201, 240, 0.3);
+  }
+  100% {
+    background-position: 100% 50%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 30px rgba(76, 201, 240, 0.5);
+  }
 }
 
 .hero-subtitle {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
   color: #e2e8f0;
@@ -91,7 +120,7 @@ body {
 }
 
 .hero-description {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-bottom: 1.5rem;
   line-height: 1.7;
   max-width: 800px;
@@ -112,36 +141,67 @@ body {
   font-style: italic;
   margin-bottom: 2rem;
   color: #cbd5e0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* Buttons */
+/* Enhanced Interactive Buttons */
 .cta-container {
   margin-top: 2.5rem;
 }
 
 .cta-button {
-  background-color: var(--accent-color);
+  background: linear-gradient(135deg, #4cc9f0, #3a86ff);
   color: white;
   border: none;
-  padding: 0.8rem 2rem;
+  padding: 1rem 2.5rem;
   font-size: 1.1rem;
   font-weight: 600;
-  border-radius: var(--border-radius);
+  border-radius: 50px;
   cursor: pointer;
-  transition: all var(--transition-speed) ease;
-  box-shadow: var(--box-shadow);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(58, 134, 255, 0.3);
   text-transform: uppercase;
   letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
 }
 
 .cta-button:hover {
-  background-color: #2c5282;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #3a86ff, #4cc9f0);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(58, 134, 255, 0.5);
+  animation: buttonPulse 1s ease-in-out infinite;
+}
+
+.cta-button:hover::before {
+  left: 100%;
 }
 
 .cta-button:active {
-  transform: translateY(0);
+  transform: translateY(-2px) scale(1.02);
+  transition: all 0.1s ease;
+}
+
+@keyframes buttonPulse {
+  0%, 100% {
+    box-shadow: 0 12px 30px rgba(58, 134, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 15px 35px rgba(58, 134, 255, 0.7);
+  }
 }
 
 /* Countdown Section */
@@ -250,20 +310,6 @@ body {
 /* Responsive Design */
 @media (max-width: 1024px) {
   .hero-title {
-    font-size: 3rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.6rem;
-  }
-
-  .hero-description {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-title {
     font-size: 2.5rem;
   }
 
@@ -274,23 +320,9 @@ body {
   .hero-description {
     font-size: 1rem;
   }
-
-  .hero-theme {
-    font-size: 1.2rem;
-  }
-
-  .nav-arrow {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-  }
 }
 
-@media (max-width: 480px) {
-  .hero-content {
-    padding: 1rem;
-  }
-
+@media (max-width: 768px) {
   .hero-title {
     font-size: 2rem;
   }
@@ -300,24 +332,52 @@ body {
   }
 
   .hero-description {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .hero-theme {
-    font-size: 1.1rem;
-  }
-
-  .cta-button {
-    padding: 0.7rem 1.5rem;
     font-size: 1rem;
   }
 
-  .countdown-section {
+  .nav-arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
     padding: 1rem;
   }
 
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-description {
+    font-size: 0.8rem;
+  }
+
+  .hero-theme {
+    font-size: 0.9rem;
+  }
+
+  .cta-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .countdown-section {
+    padding: 0.75rem;
+  }
+
   .countdown-section h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 
@@ -420,13 +480,29 @@ body {
   color: #fff;
 }
 
+/* Slide Title Styling */
 .slide-title {
-  font-size: 3.5rem;
-  font-weight: 800;
-  margin: 0 0 0.8rem 0;
-  padding: 0 1rem;
+  font-size: 4.5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+  line-height: 1.1;
   color: #ffffff;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  animation: titleGlow 3s ease-in-out infinite alternate;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+@keyframes titleGlow {
+  0% {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    transform: scale(1);
+  }
+
+  100% {
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
+    transform: scale(1.02);
+  }
 }
 
 .slide-subtitle {
@@ -465,18 +541,76 @@ body {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
+/* Enhanced Navigation Arrows */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(15px);
+  z-index: 10;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  animation: navFloat 3s ease-in-out infinite;
+}
+
+.nav-arrow:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(76, 201, 240, 0.6);
+  transform: translateY(-50%) scale(1.15);
+  opacity: 1;
+  box-shadow: 0 0 25px rgba(76, 201, 240, 0.4);
+  animation: none;
+}
+
+.nav-arrow:active {
+  transform: translateY(-50%) scale(1.05);
+  transition: all 0.1s ease;
+}
+
+.nav-arrow.prev {
+  left: 2rem;
+  animation-delay: 0s;
+}
+
+.nav-arrow.next {
+  right: 2rem;
+  animation-delay: 1.5s;
+  animation-direction: reverse;
+}
+
+@keyframes navFloat {
+  0%, 100% {
+    transform: translateY(-50%) translateX(0);
+  }
+  50% {
+    transform: translateY(-50%) translateX(5px);
+  }
+}
+
 /* Navigation Controls */
 .control-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.2);
   border: none;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem;
   cursor: pointer;
   z-index: 10;
   display: flex;
@@ -496,11 +630,11 @@ body {
 }
 
 .prev {
-  left: 20px;
+  left: 10px;
 }
 
 .next {
-  right: 20px;
+  right: 10px;
 }
 
 /* Slide Indicators */
@@ -536,8 +670,8 @@ body {
 
 /* Headline Rotator */
 .headline-rotator {
-  min-height: 60px;
-  margin: 1.5rem 0;
+  min-height: 40px;
+  margin: 1rem 0;
   position: relative;
   overflow: hidden;
 }
@@ -554,7 +688,7 @@ body {
   right: 0;
   opacity: 0;
   transition: opacity 0.5s ease;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 500;
   color: #ffd700;
 }
@@ -565,17 +699,23 @@ body {
 
 /* About Section */
 .about-section {
-  padding: 4rem 5%;
-  background-color: #f8f9fa;
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  margin: 2rem auto;
+  max-width: 95%;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .about-content {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   color: #2d3748;
   margin-bottom: 2rem;
   text-align: center;
@@ -596,13 +736,20 @@ body {
 }
 
 .content-text {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   line-height: 1.8;
   color: #4a5568;
+  text-align: justify;
 }
 
 .content-text p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
+  text-indent: 0;
+}
+
+.highlight-text {
+  color: #000000;
+  font-weight: 400;
 }
 
 /* Organizing Committee Section */
@@ -704,6 +851,130 @@ body {
 
 .see-more-btn:active {
   transform: translateY(0);
+}
+
+/* Faculty of Pharmacy Section */
+.faculty-pharmacy-section {
+  padding: 4rem 2rem;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  margin: 2rem auto;
+  max-width: 95%;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.faculty-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  padding: 0 1rem;
+}
+
+.gradient-title {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+.faculty-info-card {
+  background: rgba(248, 249, 250, 0.95);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.faculty-info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Conference Section */
+.conference-section {
+  padding: 4rem 2rem;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  margin: 2rem auto;
+  max-width: 95%;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.conference-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  padding: 0 1rem;
+}
+
+.conference-info-card {
+  background: rgba(248, 249, 250, 0.95);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.conference-info-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.conference-info-card:hover::before {
+  left: 100%;
+}
+
+.conference-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #667eea;
+}
+
+.conference-name {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.conference-name::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border-radius: 2px;
 }
 
 /* Responsive Design */
@@ -821,7 +1092,7 @@ body {
   }
 
   .content-text {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -832,5 +1103,527 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Slide indicators responsive */
+.slide-indicators {
+  bottom: 15px;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+}
+
+/* Tablet indicators */
+@media (min-width: 768px) {
+  .slide-indicators {
+    bottom: 25px;
+  }
+  
+  .indicator {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Laptop indicators */
+@media (min-width: 992px) {
+  .slide-indicators {
+    bottom: 30px;
+  }
+  
+  .indicator {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Touch-friendly improvements for mobile */
+@media (hover: none) and (pointer: coarse) {
+  .control-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  .indicator {
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .indicator::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+  }
+  
+  .indicator.active::after {
+    background: #fff;
+  }
+}
+
+/* Home Section Padding Fixes - Mobile First */
+.home-section {
+  padding: 1rem 0.5rem;
+  margin: 0;
+  min-height: auto;
+}
+
+/* Tablet home section */
+@media (min-width: 768px) {
+  .home-section {
+    padding: 1.5rem 0.75rem;
+  }
+}
+
+/* Laptop home section */
+@media (min-width: 992px) {
+  .home-section {
+    padding: 2rem 1rem;
+  }
+}
+
+.about-section {
+  padding: 4rem 2rem;
+  margin: 2rem auto;
+  max-width: 95%;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.about-text {
+  padding: 2rem 0;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+/* Section spacing */
+.faculty-pharmacy-section,
+.conference-section {
+  margin: 3rem auto;
+}
+
+/* Responsive padding adjustments */
+@media (max-width: 768px) {
+  .home-section {
+    padding: 1rem 0.5rem;
+  }
+
+  .about-section,
+  .faculty-pharmacy-section,
+  .conference-section {
+    padding: 2rem 1rem;
+    margin: 1.5rem auto;
+    max-width: 98%;
+  }
+
+  .about-content {
+    padding: 0 0.5rem;
+  }
+
+  .about-text {
+    padding: 1rem 0;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-section {
+    padding: 0.5rem 0.25rem;
+  }
+
+  .about-section,
+  .faculty-pharmacy-section,
+  .conference-section {
+    padding: 1.5rem 0.75rem;
+    margin: 1rem auto;
+    border-radius: 12px;
+  }
+
+  .about-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+/* Enhanced Mobile Responsiveness for Home - Mobile First */
+/* Base mobile styles (320px and up) */
+.slideshow-container {
+  height: 50vh;
+  min-height: 400px;
+}
+
+.slide-title {
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  line-height: 1.1;
+}
+
+.slide-subtitle {
+  font-size: 1.2rem;
+}
+
+.slide-description {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.about-section,
+.faculty-pharmacy-section,
+.conference-section {
+  padding: 1.5rem 0.75rem;
+  margin: 0.75rem auto;
+}
+
+/* Small tablets (576px and up) */
+@media (min-width: 576px) {
+  .slideshow-container {
+    height: 55vh;
+    min-height: 450px;
+  }
+  
+  .slide-title {
+    font-size: 2.2rem;
+    letter-spacing: 1.5px;
+  }
+  
+  .slide-subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .slide-description {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .about-section,
+  .faculty-pharmacy-section,
+  .conference-section {
+    padding: 2rem 1rem;
+    margin: 1rem auto;
+  }
+}
+
+/* Tablets (768px and up) */
+@media (min-width: 768px) {
+  .slideshow-container {
+    height: 65vh;
+    min-height: 500px;
+  }
+  
+  .slide-title {
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+  }
+  
+  .slide-subtitle {
+    font-size: 1.6rem;
+  }
+  
+  .slide-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .about-section,
+  .faculty-pharmacy-section,
+  .conference-section {
+    padding: 2.5rem 1.25rem;
+    margin: 1.25rem auto;
+  }
+}
+
+/* Small laptops (992px and up) */
+@media (min-width: 992px) {
+  .slideshow-container {
+    height: 75vh;
+    min-height: 600px;
+  }
+  
+  .slide-title {
+    font-size: 3.5rem;
+    letter-spacing: 2.5px;
+  }
+  
+  .slide-subtitle {
+    font-size: 1.8rem;
+  }
+  
+  .slide-description {
+    font-size: 1.2rem;
+    line-height: 1.7;
+  }
+  
+  .about-section,
+  .faculty-pharmacy-section,
+  .conference-section {
+    padding: 3rem 1.5rem;
+    margin: 1.5rem auto;
+  }
+}
+
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+  .slideshow-container {
+    height: 85vh;
+    min-height: 700px;
+  }
+  
+  .slide-title {
+    font-size: 4.5rem;
+    letter-spacing: 3px;
+  }
+  
+  .slide-subtitle {
+    font-size: 2rem;
+  }
+  
+  .slide-description {
+    font-size: 1.3rem;
+    line-height: 1.8;
+  }
+  
+  .about-section,
+  .faculty-pharmacy-section,
+  .conference-section {
+    padding: 4rem 2rem;
+    margin: 2rem auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .slideshow-container {
+    height: 60vh;
+    margin-top: 120px;
+    /* Account for fixed header */
+  }
+
+  .slide-content {
+    padding: 1rem;
+  }
+
+  .slide-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 2px;
+  }
+
+  .slide-subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .slide-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .slide-theme {
+    font-size: 1.1rem;
+  }
+
+  .slide-organizer {
+    font-size: 0.9rem;
+  }
+
+  .about-section,
+  .faculty-pharmacy-section,
+  .conference-section {
+    padding: 2rem 1rem;
+    margin: 1rem auto;
+    max-width: 98%;
+    border-radius: 15px;
+  }
+
+  .about-content,
+  .faculty-content,
+  .conference-content {
+    padding: 0 0.5rem;
+  }
+
+  .about-text {
+    padding: 1.5rem 0;
+    font-size: 1rem;
+  }
+
+  .gradient-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .faculty-info-card,
+  .conference-info-card {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .slideshow-container {
+    height: 50vh;
+    margin-top: 100px;
+  }
+
+  .slide-content {
+    padding: 0.75rem;
+  }
+
+  .slide-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+    line-height: 1.1;
+  }
+
+  .slide-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .slide-description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+  }
+
+  .slide-theme {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .slide-organizer {
+    font-size: 0.8rem;
+  }
+
+  .about-section,
+  .faculty-pharmacy-section,
+  .conference-section {
+    padding: 1.5rem 0.75rem;
+    margin: 0.75rem auto;
+    border-radius: 12px;
+  }
+
+  .about-content,
+  .faculty-content,
+  .conference-content {
+    padding: 0 0.25rem;
+  }
+
+  .about-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .about-text p {
+    margin-bottom: 1rem;
+  }
+
+  .gradient-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .faculty-info-card,
+  .conference-info-card {
+    padding: 1.5rem;
+    border-radius: 15px;
+  }
+
+  .conference-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .conference-name {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 360px) {
+  .slideshow-container {
+    height: 45vh;
+  }
+
+  .slide-content {
+    padding: 0.5rem;
+  }
+
+  .slide-title {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+  }
+
+  .slide-subtitle {
+    font-size: 1rem;
+  }
+
+  .slide-description {
+    font-size: 0.8rem;
+  }
+
+  .slide-theme {
+    font-size: 0.9rem;
+  }
+
+  .slide-organizer {
+    font-size: 0.75rem;
+  }
+
+  .about-section,
+  .faculty-pharmacy-section,
+  .conference-section {
+    padding: 1rem 0.5rem;
+    margin: 0.5rem auto;
+    border-radius: 10px;
+  }
+
+  .gradient-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .faculty-info-card,
+  .conference-info-card {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .conference-name {
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .control-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+  
+  .prev {
+    left: 5px;
+  }
+  
+  .next {
+    right: 5px;
   }
 }

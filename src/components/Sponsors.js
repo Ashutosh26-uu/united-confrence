@@ -122,98 +122,30 @@ const Sponsors = () => {
   const visibleMembers = showAllMembers ? filteredMembers : filteredMembers.slice(0, 6);
 
   // Simulate loading
-  useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const handleMemberClick = (member) => {
-    setSelectedMember(selectedMember?.name === member.name ? null : member);
-  };
-
-  if (isLoading) {
-    return (
-      <div className="loading-container">
-        <div className="spinner"></div>
-        <p>Loading team members...</p>
-      </div>
-    );
-  }
-
   return (
-    <section className="sponsors-section">
-      <h2>Our Organizing Committee</h2>
-
-      {/* Search and Filter */}
-      <div className="controls">
-        <div className="search-container">
-          <input
-            type="text"
-            placeholder="Search members..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="search-input"
-          />
-          <i className="search-icon">🔍</i>
+    <section id="sponsors" className="section sponsors">
+      <div className="sponsors-container">
+        <div className="sponsors-header">
+          <h2>SPONSORS</h2>
+          <div className="sponsors-subtitle">Partnership Opportunities</div>
         </div>
 
-        <div className="filter-buttons">
-          {categories.map(category => (
-            <button
-              key={category.id}
-              className={`filter-btn ${activeFilter === category.id ? 'active' : ''}`}
-              onClick={() => setActiveFilter(category.id)}
-            >
-              {category.label}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Members Grid */}
-      <div className="members-grid">
-        {visibleMembers.map((member, index) => (
-          <div
-            key={member.name}
-            className={`member-card ${selectedMember?.name === member.name ? 'active' : ''}`}
-            onClick={() => handleMemberClick(member)}
-          >
-            <div className="member-image-container">
-              <img
-                src={member.image}
-                alt={member.name}
-                className="member-image"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = '/images/placeholder-avatar.png';
-                }}
-              />
-              <div className="member-overlay">
-                <span>View Details</span>
-              </div>
+        <div className="announcement-section">
+          <div className="announcement-card">
+            <div className="announcement-icon">
+              <span>🤝</span>
             </div>
-            <div className="member-info">
-              <h3>{member.name}</h3>
-              <p className="role">{member.role}</p>
-              {selectedMember?.name === member.name && (
-                <div className="member-details">
-                  <p>{member.intro}</p>
-                  <button className="contact-btn">Contact</button>
-                </div>
-              )}
+            <div className="announcement-content">
+              <h3>List of Sponsors Announced Soon</h3>
+              <p>We are currently finalizing partnerships with leading pharmaceutical companies and healthcare organizations. The complete list of sponsors will be announced shortly.</p>
             </div>
           </div>
-        ))}
+          
+          <div className="coming-soon-badge">
+            <span>Announcement Coming Soon</span>
+          </div>
+        </div>
       </div>
-
-      {filteredMembers.length > 6 && (
-        <button
-          className="view-more-btn"
-          onClick={() => setShowAllMembers(!showAllMembers)}
-        >
-          {showAllMembers ? 'Show Less' : `View All (${filteredMembers.length})`}
-        </button>
-      )}
     </section>
   );
 };

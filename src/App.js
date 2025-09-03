@@ -1,45 +1,60 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
-import Papers from './components/Papers';
+import KeyAreas from './components/KeyAreas';
+import ImportantDates from './components/ImportantDates';
+import Papers from './components/paper';
 import Registration from './components/Registration';
 import Venue from './components/Venue';
 import Speakers from './components/Speakers';
-import Sponsors from './components/Sponsors';
-import Footer from './components/Footer';
-import AboutPrayagraj from './components/AboutPrayagraj';
-import ImportantDates from './components/ImportantDates';
-import InteractiveElements from './components/InteractiveElements';
-import OrganizingCommittee from './components/OrganizingCommittee';
+import OrganizationalTree from './components/OrganizationalTree';
 import Contact from './components/Contact';
+import AboutPrayagraj from './components/AboutPrayagraj';
+import Footer from './components/Footer';
+import InteractiveElements from './components/InteractiveElements';
+import { FloatingElements } from './components/CreativeElements';
 import './App.css';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about/prayagraj" element={<AboutPrayagraj />} />
-          <Route path="/about/committee" element={<OrganizingCommittee />} />
-          <Route path="/dates" element={<ImportantDates />} />
-          <Route path="/program/schedule" element={<div>Conference Schedule</div>} />
-          <Route path="/speakers" element={<Speakers />} />
-          <Route path="/program/workshops" element={<div>Workshops</div>} />
-          <Route path="/papers" element={<Papers />} />
-          <Route path="/submission/guidelines" element={<div>Submission Guidelines</div>} />
-          <Route path="/registration" element={<Registration />} />
-          <Route path="/venue" element={<Venue />} />
-          <Route path="/sponsors" element={<Sponsors />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Home />} />
-        </Routes>
-        <InteractiveElements />
-        <Footer />
-      </div>
-    </Router>
+    <div className="App">
+      <Header />
+      <main>
+        <section id="home">
+          <Home />
+        </section>
+        <section id="key-areas">
+          <KeyAreas />
+        </section>
+        <section id="important-dates">
+          <ImportantDates />
+        </section>
+        <section id="papers">
+          <Papers />
+        </section>
+        <section id="registration">
+          <Registration />
+        </section>
+        <section id="venue">
+          <Venue />
+        </section>
+        <section id="speakers">
+          <Speakers />
+        </section>
+        <section id="organizing-committee">
+          <OrganizationalTree />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
+        <section id="about-prayagraj">
+          <AboutPrayagraj />
+        </section>
+      </main>
+      <InteractiveElements />
+      <FloatingElements />
+      <Footer />
+    </div>
   );
 }
 

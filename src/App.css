@@ -5,15 +5,359 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   line-height: 1.6;
   color: #333;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .App {
   text-align: center;
-  background-color: #f8f9fa;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   min-height: 100vh;
+  position: relative;
+  padding-top: 90px;
+}
+
+.App::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(102, 126, 234, 0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+  z-index: -1;
+  opacity: 0.5;
+}
+
+main {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  padding: 0;
+}
+
+section {
+  width: 100%;
+  min-height: auto;
+  padding: 2rem 1rem;
+  position: relative;
+  margin: 1.5rem 0;
+  transition: all 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-2px);
+}
+
+/* Enhanced Section Styling */
+#home {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  margin-top: -90px;
+  padding-top: 90px;
+}
+
+#prayagraj,
+#key-areas,
+#important-dates,
+#papers,
+#registration,
+#venue,
+#speakers,
+#important-updates,
+#organizing-committee,
+#sponsors {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 2rem auto;
+  max-width: 95%;
+  overflow: hidden;
+  position: relative;
+  padding: 2rem 1.5rem;
+}
+
+#prayagraj::before,
+#key-areas::before,
+#important-dates::before,
+#papers::before,
+#registration::before,
+#venue::before,
+#speakers::before,
+#important-updates::before,
+#organizing-committee::before,
+#sponsors::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+#prayagraj:hover::before,
+#key-areas:hover::before,
+#important-dates:hover::before,
+#papers:hover::before,
+#registration:hover::before,
+#venue:hover::before,
+#speakers:hover::before,
+#important-updates:hover::before,
+#organizing-committee:hover::before,
+#sponsors:hover::before {
+  left: 100%;
+}
+
+/* Content containers */
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Professional Animation Classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Section Animation Classes */
+.animate-fade-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-slide-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+/* Mobile-first responsive adjustments */
+/* Base mobile styles */
+.App {
+  padding-top: 80px;
+}
+
+main {
+  padding: 0;
+}
+
+section {
+  padding: 1rem 0.5rem;
+  margin: 0.75rem 0;
+}
+
+#home {
+  margin-top: -80px;
+  padding-top: 80px;
+}
+
+#prayagraj,
+#key-areas,
+#important-dates,
+#papers,
+#registration,
+#venue,
+#speakers,
+#important-updates,
+#organizing-committee,
+#sponsors {
+  max-width: 100%;
+  border-radius: 12px;
+  margin: 0.75rem auto;
+  padding: 1.25rem 0.75rem;
+}
+
+/* Small tablets (576px and up) */
+@media (min-width: 576px) {
+  .App {
+    padding-top: 90px;
+  }
+  
+  #home {
+    margin-top: -90px;
+    padding-top: 90px;
+  }
+  
+  #prayagraj,
+  #key-areas,
+  #important-dates,
+  #papers,
+  #registration,
+  #venue,
+  #speakers,
+  #important-updates,
+  #organizing-committee,
+  #sponsors {
+    max-width: 98%;
+    border-radius: 15px;
+    margin: 1rem auto;
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Tablets (768px and up) */
+@media (min-width: 768px) {
+  .App {
+    padding-top: 100px;
+  }
+  
+  main {
+    padding: 0 0.5rem;
+  }
+  
+  section {
+    padding: 1.5rem 0.75rem;
+    margin: 1rem 0;
+  }
+  
+  #home {
+    margin-top: -100px;
+    padding-top: 100px;
+  }
+  
+  #prayagraj,
+  #key-areas,
+  #important-dates,
+  #papers,
+  #registration,
+  #venue,
+  #speakers,
+  #important-updates,
+  #organizing-committee,
+  #sponsors {
+    max-width: 96%;
+    border-radius: 18px;
+    margin: 1.25rem auto;
+    padding: 1.75rem 1.25rem;
+  }
+}
+
+/* Laptops (992px and up) */
+@media (min-width: 992px) {
+  .App {
+    padding-top: 110px;
+  }
+  
+  main {
+    padding: 0 1rem;
+  }
+  
+  section {
+    padding: 2rem 1rem;
+    margin: 1.5rem 0;
+  }
+  
+  #home {
+    margin-top: -110px;
+    padding-top: 110px;
+  }
+  
+  #prayagraj,
+  #key-areas,
+  #important-dates,
+  #papers,
+  #registration,
+  #venue,
+  #speakers,
+  #important-updates,
+  #organizing-committee,
+  #sponsors {
+    max-width: 94%;
+    border-radius: 20px;
+    margin: 1.5rem auto;
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+  .App {
+    padding-top: 120px;
+  }
+  
+  main {
+    padding: 0 1.5rem;
+  }
+  
+  section {
+    padding: 2.5rem 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  #home {
+    margin-top: -120px;
+    padding-top: 120px;
+  }
+  
+  #prayagraj,
+  #key-areas,
+  #important-dates,
+  #papers,
+  #registration,
+  #venue,
+  #speakers,
+  #important-updates,
+  #organizing-committee,
+  #sponsors {
+    max-width: 92%;
+    margin: 2rem auto;
+    padding: 2.5rem 2rem;
+  }
 }
 
 h1,
@@ -24,4 +368,250 @@ h5,
 h6 {
   margin-bottom: 1rem;
   color: #2c3e50;
+}
+
+/* Enhanced Responsive Design - Mobile First Approach */
+/* Base styles for mobile (320px and up) */
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 1.5rem 1rem;
+}
+
+/* Small tablets and large phones (576px and up) */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+    padding: 0 1.25rem;
+  }
+  
+  .section {
+    padding: 2rem 1.25rem;
+  }
+}
+
+/* Tablets (768px and up) */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+    padding: 0 1.5rem;
+  }
+  
+  .section {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+/* Small laptops (992px and up) */
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+    padding: 0 1.75rem;
+  }
+  
+  .section {
+    padding: 3rem 1.75rem;
+  }
+}
+
+/* Large laptops and desktops (1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+    padding: 0 2rem;
+  }
+  
+  .section {
+    padding: 3.5rem 2rem;
+  }
+}
+
+/* Extra large screens (1400px and up) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 98%;
+    padding: 0 0.75rem;
+  }
+
+  .section {
+    padding: 2.5rem 1rem;
+  }
+
+  /* Navigation adjustments */
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+
+  .section {
+    padding: 2rem 0.75rem;
+    margin: 1rem 0;
+  }
+
+  /* Typography scaling */
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  /* Button adjustments */
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* Grid layouts */
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.25rem;
+  }
+
+  .section {
+    padding: 1.5rem 0.5rem;
+    margin: 0.75rem 0;
+  }
+
+  /* Typography for mobile */
+  h1 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* Button adjustments */
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  /* All grids become single column */
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Card adjustments */
+  .card {
+    padding: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  /* Image responsiveness */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+
+  .btn,
+  .nav-links a,
+  .card {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn:hover,
+  .nav-links a:hover,
+  .card:hover {
+    transform: none;
+  }
+
+  .btn:active,
+  .nav-links a:active,
+  .card:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+  .section {
+    padding: 1.5rem 1rem;
+  }
+
+  .slideshow-container {
+    height: 70vh;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
+  .logo-image,
+  .speaker-image img,
+  .committee-image img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
 }
