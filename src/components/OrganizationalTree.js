@@ -36,7 +36,7 @@ const OrganizationalTree = () => {
         {
           name: "Dr. Roohi Kesharwani",
           title: "Convener",
-          image: "/images/Dr. Roohi Kesarwani.jpg"
+          image: "/images/Dr. Roohi Kesarwani.png"
         },
         {
           name: "Mr. Vineet Srivastava",
@@ -54,42 +54,42 @@ const OrganizationalTree = () => {
 
   // Conference Advisory Committee
   const conferenceAdvisoryCommittee = {
-    title: "CONFERENCE ADVISORY COMMITTEE",
+    title: "CONFERENCE ADVISORY ",
     members: [
       {
         name: "Prof. (Dr.) Alok Mukerjee",
         title: "Advisory Member",
-        image: "/images/prof-alok-mukerjee.png"
+        image: "/images/alok mukrjee.png"
       },
       {
         name: "Dr. Chetan Vyas",
         title: "Advisory Member",
-        image: "/images/dr-chetan-vyas.png"
+        image: "/images/Dr. Chetan Vayas.JPG"
       },
       {
         name: "Dr. Roshni Shrivastava",
         title: "Advisory Member",
-        image: "/images/dr-roshni-shrivastava.png"
+        image: "/images/dr roshani srivastava .jpg"
       },
       {
         name: "Dr. Anil Kumar Singh",
         title: "Advisory Member",
-        image: "/images/dr-anil-kumar-singh.png"
+        image: "/images/anil singh.png"
       },
       {
         name: "Dr. Shanti Bhushan Mishra",
         title: "Advisory Member",
-        image: "/images/dr-shanti-bhushan-mishra.png"
+        image: "/images/dr. shanti bhusan mishra.png"
       },
       {
         name: "Dr. Sunil Singh",
         title: "Advisory Member",
-        image: "/images/dr-sunil-singh.png"
+        image: "/images/sunil singh.png"
       },
       {
         name: "Dr. Shradhanjali Singh",
         title: "Advisory Member",
-        image: "/images/dr-shradhanjali-singh.png"
+        image: "/images/shradhanjali.png"
       }
     ]
   };
@@ -322,7 +322,6 @@ const OrganizationalTree = () => {
   return (
     <section id="organizing-committee" className="section organizational-tree">
       <div className="tree-header">
-        <h2>COMMITTEE STRUCTURE</h2>
         <div className="tree-subtitle">Conference Organization</div>
       </div>
 
@@ -346,14 +345,7 @@ const OrganizationalTree = () => {
         {/* Additional Committees - Hidden by default */}
         {showAdditionalCommittees && (
           <div className="additional-committees">
-            <div className="committee-group">
-              {renderCommitteeSection(conferenceAdvisoryCommittee)}
-            </div>
-
-            <div className="committee-group">
-              {renderCommitteeSection(advisoryCommittee)}
-            </div>
-
+            {/* 2nd: Organizing Sub Committees */}
             <div className="committee-group">
               {renderCommitteeSection(scientificCommittee)}
             </div>
@@ -376,6 +368,16 @@ const OrganizationalTree = () => {
 
             <div className="committee-group">
               {renderCommitteeSection(publicityCommittee)}
+            </div>
+
+            {/* 3rd: Conference Advisory */}
+            <div className="committee-group">
+              {renderCommitteeSection(conferenceAdvisoryCommittee)}
+            </div>
+
+            {/* 4th: Advisory Committee */}
+            <div className="committee-group">
+              {renderCommitteeSection(advisoryCommittee)}
             </div>
           </div>
         )}

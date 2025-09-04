@@ -26,7 +26,6 @@ yarn-error.log*
 .idea
 .vscode/*
 !.vscode/extensions.json
-.idea
 *.suo
 *.ntvs*
 *.njsproj

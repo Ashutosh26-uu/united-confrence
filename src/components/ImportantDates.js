@@ -20,7 +20,7 @@ const ImportantDates = () => {
       description: "Notification of accepted abstracts."
     },
     {
-      title: "Dedline for full length Paper Submission",
+      title: "Deadline for full length Paper Submission",
       date: "20th October 2025",
       description: "Last date for full length paper submission."
     },

@@ -371,9 +371,9 @@ const Papers = () => {
                                 <h4>📤 Submission Process</h4>
                                 <div className="process-info">
                                     <div className="contact-info">
-                                        <span className="contact-label">Submit your full-length paper via email to:</span>
-                                        <a href="mailto:confpharm@uniteduniversity.edu.in" className="email-link">
-                                            confpharm@uniteduniversity.edu.in
+                                        <span className="contact-label">Submit your full-length paper via Google Form:</span>
+                                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScvH04Y3iyrnwGMggbddQUbYPLB1GsY42edWF0d9DVzQvLhmQ/viewform?usp=preview" target="_blank" rel="noopener noreferrer" className="form-link">
+                                            Full-Length Paper Submission Form
                                         </a>
                                     </div>
                                     <div className="deadline-info">
@@ -414,7 +414,7 @@ const Papers = () => {
                 <h3>Ready to Submit?</h3>
                 <p>Join leading researchers and contribute to the future of pharmaceutical sciences</p>
                 <div className="cta-buttons">
-                    <a href="mailto:confpharm@uniteduniversity.edu.in" className="cta-btn primary">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScvH04Y3iyrnwGMggbddQUbYPLB1GsY42edWF0d9DVzQvLhmQ/viewform?usp=preview" target="_blank" rel="noopener noreferrer" className="cta-btn primary">
                         Submit Your Work
                     </a>
                     <button className="cta-btn secondary">Contact Support</button>

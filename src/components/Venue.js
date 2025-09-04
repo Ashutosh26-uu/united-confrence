@@ -61,11 +61,9 @@ const Venue = () => {
           <div className="accommodation-details">
             <ul>
               <li>Non-AC room with double occupancy at boys campus hostel - approximately Rs.700 per person per day.</li>
-              <li>Non-AC rooms with double occupancy at girls' hostel - approximately Rs.700 per person per day (approx. Rs.1000 for single occupancy).</li>
+              <li>Non-AC rooms with double occupancy at girls' hostel - approximately Rs.700 per person per day.</li>
               <li>The booking of the rooms will be based on a first come first serve basis. Registered delegates can send an E-mail request to <strong>confpharm@uniteduniversity.edu.in</strong></li>
               <li>Mention the registration number and other details in the E-mail query.</li>
-              <li>For any queries contact to: Mr. Vineet srivstava (Mobile no: +91 8960277835)</li>
-              <li>The mode of payment is only through a Debit card/NEFT/UPI on same account at the website/registration link.</li>
             </ul>
           </div>
 

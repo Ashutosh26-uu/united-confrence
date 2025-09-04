@@ -40,7 +40,7 @@ const KeyAreas = () => {
                     </div>
                     <div className="thrust-item">
                         <span className="thrust-arrow">➤</span>
-                        <span className="thrust-text">Artificial Intelligence IN PHARMACY</span>
+                        <span className="thrust-text">Artificial Intelligence in PHARMACY</span>
                     </div>
                     <div className="thrust-item">
                         <span className="thrust-arrow">➤</span>

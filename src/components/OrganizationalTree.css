@@ -28,26 +28,14 @@
 
 .tree-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   position: relative;
   z-index: 2;
 }
 
-.tree-header h2 {
-  background: linear-gradient(135deg, #ff6b6b, #ffd93d);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-size: 3rem;
-  font-weight: 900;
-  margin-bottom: 10px;
-  text-shadow: 0 0 30px rgba(255, 107, 107, 0.3);
-  letter-spacing: 3px;
-}
-
 .tree-subtitle {
   color: rgba(255, 255, 255, 0.9);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 300;
   letter-spacing: 2px;
   text-transform: uppercase;

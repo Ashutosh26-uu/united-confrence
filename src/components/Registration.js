@@ -6,100 +6,136 @@ const Registration = () => {
   return (
     <section id="registration" className="section registration">
       <div className="registration-container">
+        {/* Main Header */}
         <div className="registration-header">
-          <h2>REGISTRATION</h2>
-          <p>Registrations are available Online mode and on spot</p>
+          <div className="header-badge">
+            <h2>REGISTRATION</h2>
+          </div>
+          <p className="header-subtitle">Registrations are available Online mode and on spot</p>
         </div>
 
-        <div className="certificate-section">
-          <h3>CERTIFICATE</h3>
-          <p>Certificates will be awarded to the participants in poster/oral, full-length paper and attending all the sessions of the Conference.</p>
+        {/* Certificate Info Card */}
+        <div className="info-card certificate-card">
+          <div className="card-header">
+            <div className="card-icon">🎓</div>
+            <h3>CERTIFICATE</h3>
+          </div>
+          <div className="card-content">
+            <p><strong>Certificates will be awarded to the participants in poster/oral, full-length paper and attending all the sessions of the Conference.</strong></p>
+          </div>
         </div>
 
-        <div className="flyer-section">
-          <h3>CONFERENCE FLYER</h3>
-          <div className="download-container">
+        {/* Awards Highlight */}
+        <div className="awards-banner">
+          <div className="awards-content">
+            <span className="trophy-icon">🏆</span>
+            <div className="awards-text">
+              <strong>Best oral and poster presentations will be awarded!</strong>
+            </div>
+          </div>
+        </div>
+
+        {/* Conference Flyer Card */}
+        <div className="info-card flyer-card">
+          <div className="card-header">
+            <div className="card-icon">📄</div>
+            <h3>Download Conference Flyer</h3>
+          </div>
+          <div className="card-content">
             <a
               href="/images/flyer part 2 updated.pdf"
               download="UPHARMORA_Conference_Flyer.pdf"
-              className="download-btn"
+              className="download-btn-modern"
             >
-              <span className="download-icon">📄</span>
+              <span className="btn-icon">📥</span>
               Download Conference Flyer
             </a>
           </div>
         </div>
 
-        <div className="fee-section">
-          <h3>REGISTRATION FEE</h3>
-          <div className="fee-table">
-            <div className="table-header">
-              <div className="category-col">CATEGORY</div>
-              <div className="early-bird-col">EARLY BIRD REGISTRATION FEE (ON OR BEFORE 15th OCTOBER 2025)</div>
-              <div className="on-spot-col">ON SPOT REGISTRATION FEE (AFTER 15th OCTOBER 2025)</div>
-            </div>
-
-            <div className="table-row">
-              <div className="category-col">STUDENTS (UG/DIPLOMA)</div>
-              <div className="early-bird-col">800/-</div>
-              <div className="on-spot-col">1200/-</div>
-            </div>
-
-            <div className="table-row">
-              <div className="category-col">STUDENTS (PG/PHD/POST DOC.)</div>
-              <div className="early-bird-col">1100/-</div>
-              <div className="on-spot-col">1500/-</div>
-            </div>
-
-            <div className="table-row">
-              <div className="category-col">FACULTY</div>
-              <div className="early-bird-col">1500/-</div>
-              <div className="on-spot-col">2000/-</div>
-            </div>
-
-            <div className="table-row">
-              <div className="category-col">INDUSTRY DELEGATES</div>
-              <div className="early-bird-col">2500/-</div>
-              <div className="on-spot-col">3000/-</div>
+        {/* Registration Fee Card */}
+        <div className="info-card fee-card">
+          <div className="card-header">
+            <div className="card-icon">💰</div>
+            <h3>REGISTRATION FEE</h3>
+          </div>
+          <div className="card-content">
+            <div className="fee-table-modern">
+              <div className="table-header-modern">
+                <div className="col-category">CATEGORY</div>
+                <div className="col-early">EARLY BIRD REGISTRATION FEE<br/><span className="date-text">(ON OR BEFORE 15th OCTOBER 2025)</span></div>
+                <div className="col-spot">ON SPOT REGISTRATION FEE<br/><span className="date-text">(AFTER 15th OCTOBER 2025)</span></div>
+              </div>
+              
+              <div className="table-row-modern">
+                <div className="col-category">STUDENTS (UG/DIPLOMA)</div>
+                <div className="col-early">₹800/-</div>
+                <div className="col-spot">₹1200/-</div>
+              </div>
+              
+              <div className="table-row-modern">
+                <div className="col-category">STUDENTS (PG/PHD/POST DOC.)</div>
+                <div className="col-early">₹1100/-</div>
+                <div className="col-spot">₹1500/-</div>
+              </div>
+              
+              <div className="table-row-modern">
+                <div className="col-category">FACULTY</div>
+                <div className="col-early">₹1500/-</div>
+                <div className="col-spot">₹2000/-</div>
+              </div>
+              
+              <div className="table-row-modern">
+                <div className="col-category">INDUSTRY DELEGATES</div>
+                <div className="col-early">₹2500/-</div>
+                <div className="col-spot">₹3000/-</div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="payment-section">
-          <h3>MODE OF PAYMENT</h3>
-          <div className="payment-content">
-            <div className="payment-text">
-              <p>Registration fee can be paid through RTGS/UPI.</p>
-            </div>
-            <div className="qr-code-container">
-              <img
-                src="/images/QR-Code.png"
-                alt="Payment QR Code"
-                className="payment-qr-code"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                }}
-              />
-              <p className="qr-code-label">Scan to Register</p>
+        {/* Registration QR Code Card */}
+        <div className="info-card registration-qr-card">
+          <div className="card-header">
+            <div className="card-icon">📱</div>
+            <h3>QUICK REGISTRATION</h3>
+          </div>
+          <div className="card-content">
+            <div className="registration-qr-grid">
+              <div className="qr-info">
+                <p><strong>Scan the QR code for quick and easy registration.</strong></p>
+                <p className="payment-method-text"><strong>Registration fee can be paid through RTGS/UPI.</strong></p>
+              </div>
+              <div className="qr-section">
+                <img
+                  src="/images/QR-Code.png"
+                  alt="Registration QR Code"
+                  className="qr-code-modern"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                  }}
+                />
+                <p className="qr-label">Scan to Register</p>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="registration-form">
-          <h3>Register Now</h3>
-          <div className="google-form-container">
-            <p>Click the button below to access our online registration form:</p>
+        {/* Registration CTA */}
+        <div className="registration-cta">
+          <div className="cta-content">
+            <h3>Ready to Join?</h3>
+            <p>Register now and be part of this exciting pharmaceutical conference!</p>
             <a
               href="https://uniteduniversity.edu.in/regForms/Form1023.aspx"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn register-now-btn"
+              className="register-btn-main"
             >
-              <span className="btn-icon">📝</span>
+              <span className="btn-icon">🚀</span>
               Register Now
               <span className="btn-arrow">→</span>
             </a>
-            <p className="form-note">You will be redirected to our secure Google Form for registration.</p>
           </div>
         </div>
       </div>

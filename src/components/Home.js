@@ -8,22 +8,14 @@ const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
-  const [currentHeadline, setCurrentHeadline] = useState(0);
   const slideInterval = useRef();
-  const headlineInterval = useRef();
   const touchThreshold = 50;
-  
+
   // Headlines array
-  const headlines = [
-    "Fostering Innovation for a Healthier Tomorrow",
-    "Navigating the Future of Pharmaceutical Sciences",
-    "Advancing Healthcare Through Research Excellence",
-    "Building Tomorrow's Pharmaceutical Professionals"
-  ];
   const slides = [
     {
       title: "UPHARMORA - 1.0",
-      subtitle: "NATIONAL CONFRENCE (FIHTNFPS - 2025) ",
+      subtitle: "NATIONAL CONFERENCE (FIHTNFPS - 2025) ",
       description: "Fostering Innovation for a Healthier Tomorrow: Navigating the Future of Pharmaceutical Sciences",
       theme: "7-8 November 2025",
       organizer: "FACULTY OF PHARMACY, UNITED UNIVERSITY PRAYAGRAJ",
@@ -40,14 +32,6 @@ const Home = () => {
     }
   ];
 
-  // Rotate headlines
-  useEffect(() => {
-    headlineInterval.current = setInterval(() => {
-      setCurrentHeadline(prev => (prev + 1) % headlines.length);
-    }, 4000);
-
-    return () => clearInterval(headlineInterval.current);
-  }, [headlines.length]);
 
   const stopSlideShow = useCallback(() => {
     if (slideInterval.current) {
@@ -84,7 +68,6 @@ const Home = () => {
     startSlideShow();
     return () => {
       stopSlideShow();
-      if (headlineInterval.current) clearInterval(headlineInterval.current);
     };
   }, [startSlideShow, stopSlideShow]);
 
@@ -113,19 +96,6 @@ const Home = () => {
                   <h1 className="slide-title">{slide.title}</h1>
                   <h2 className="slide-subtitle">{slide.subtitle}</h2>
 
-                  {/* Headline Rotator */}
-                  <div className="headline-rotator">
-                    <div className="headline-container">
-                      {headlines.map((headline, i) => (
-                        <div
-                          key={i}
-                          className={`headline ${i === currentHeadline ? 'active' : ''}`}
-                        >
-                          {headline}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
 
                   <p className="slide-description">{slide.description}</p>
                   <p className="slide-theme">{slide.theme}</p>
