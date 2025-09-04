@@ -10,49 +10,43 @@ const OrganizationalTree = () => {
   const organizingCommittee = {
     title: "ORGANIZING COMMITTEE",
     rows: [
-      // First Row - Dr. Jagdish Gulati
+      // First Row - Dr. Jagdish Gulati (Patron)
       [
         {
           name: "Dr. Jagdish Gulati",
           title: "Patron",
-          description: "Patron of United University",
           image: "/images/Drgulati.png"
         }
       ],
-      // Second Row - Prof. A. M. Agrawal and Dr. Shahnawaz Shameem
+      // Second Row - Prof. A. M. Agrawal (Chairperson) and Dr. Amit Kumar Singh (Co-Chairperson)
       [
         {
           name: "Prof. (Dr.) A. M. Agrawal",
-          title: "Vice Chancellor",
-          description: "Vice Chancellor United University",
+          title: "Chairperson",
           image: "/images/Dr. A.M. Agarwal.png"
         },
         {
-          name: "Dr. Shahnawaz Shameem",
-          title: "Organizing Committee Member",
-          description: "Faculty of Pharmacy, United University",
-          image: "/images/Dr. Shahnawaz Shameem.png"
-        }
-      ],
-      // Third Row - Remaining members
-      [
-        {
           name: "Dr. Amit Kumar Singh",
           title: "Co-Chairperson",
-          description: "Co-Chairperson, Faculty of Pharmacy",
           image: "/images/Dr. Amit Kumar Singh.jpg"
-        },
+        }
+      ],
+      // Third Row - Dr. Roohi Kesharwani (Convener), Mr. Vineet Srivastava (Co-Convener), Dr. Shahnawaz Sameem (Organizing Secretary)
+      [
         {
-          name: "Dr. Roohi Kesarwani",
+          name: "Dr. Roohi Kesharwani",
           title: "Convener",
-          description: "Convener, Conference Committee",
           image: "/images/Dr. Roohi Kesarwani.jpg"
         },
         {
-          name: "Mr. Vineet Shrivastava",
+          name: "Mr. Vineet Srivastava",
           title: "Co-Convener",
-          description: "Co-Convener, Conference Committee",
           image: "/images/Mr. Vineet Shrivastava.jpg"
+        },
+        {
+          name: "Dr. Shahnawaz Sameem",
+          title: "Organizing Secretary",
+          image: "/images/Dr. Shahnawaz Shameem.png"
         }
       ]
     ]
@@ -63,17 +57,64 @@ const OrganizationalTree = () => {
     title: "CONFERENCE ADVISORY COMMITTEE",
     members: [
       {
-        name: "Dr. Nimesh Kumar Dubey",
+        name: "Prof. (Dr.) Alok Mukerjee",
         title: "Advisory Member",
-        description: "Senior Advisory Member, UPHARMORA 1.0",
-        image: "/images/Dr. Nimesh Kumar Dubey.jpg"
+        image: "/images/prof-alok-mukerjee.png"
       },
       {
-        name: "Mr. Dhirendra Vishwakarma",
-        title: "Advisory Secretary",
-        description: "Advisory Secretary, Conference Committee",
-        image: "/images/Mr. Dhirendra Vishwakarma.jpg"
+        name: "Dr. Chetan Vyas",
+        title: "Advisory Member",
+        image: "/images/dr-chetan-vyas.png"
+      },
+      {
+        name: "Dr. Roshni Shrivastava",
+        title: "Advisory Member",
+        image: "/images/dr-roshni-shrivastava.png"
+      },
+      {
+        name: "Dr. Anil Kumar Singh",
+        title: "Advisory Member",
+        image: "/images/dr-anil-kumar-singh.png"
+      },
+      {
+        name: "Dr. Shanti Bhushan Mishra",
+        title: "Advisory Member",
+        image: "/images/dr-shanti-bhushan-mishra.png"
+      },
+      {
+        name: "Dr. Sunil Singh",
+        title: "Advisory Member",
+        image: "/images/dr-sunil-singh.png"
+      },
+      {
+        name: "Dr. Shradhanjali Singh",
+        title: "Advisory Member",
+        image: "/images/dr-shradhanjali-singh.png"
       }
+    ]
+  };
+
+  // Advisory Committee
+  const advisoryCommittee = {
+    title: "ADVISORY COMMITTEE",
+    isNamesList: true,
+    names: [
+      "Prof. (Dr.) V.K. Dixit",
+      "Prof. (Dr.) R.K Khar",
+      "Prof. (Dr.). Sanjay K Jain",
+      "Prof. (Dr.) S.P Vyas",
+      "Prof. (Dr.) O.P. Katare",
+      "Prof. (Dr.) Shubhini A. Saraf",
+      "Prof. (Dr.) Ranjit Singh",
+      "Prof. (Dr.) suneela dhaaneshwar",
+      "Prof. (Dr.) N.K. Jain",
+      "Prof. (Dr.) Shailendra Saraf",
+      "Prof. (Dr.) Meenakshi bajpayai",
+      "Prof. (Dr.) B. Mishra",
+      "Prof. (Dr.) B. G. Shivananda",
+      "Prof. (Dr.) Atul Nasa",
+      "Prof. (Dr.). Shushant Srivastava",
+      "Prof. (Dr.) Milind Umekar",
     ]
   };
 
@@ -83,8 +124,6 @@ const OrganizationalTree = () => {
     members: [
       {
         name: "Mrs. Priyanka Yadav",
-        title: "Scientific Head",
-        description: "Head of Scientific Committee",
         image: "/images/Mrs. Priyanka Yadav.jpg"
       }
     ]
@@ -95,8 +134,6 @@ const OrganizationalTree = () => {
     members: [
       {
         name: "Dr. Nimesh Kumar Dubey",
-        title: "Finance Head",
-        description: "Head of Finance and Sponsorship",
         image: "/images/Dr. Nimesh Kumar Dubey.jpg"
       }
     ]
@@ -107,14 +144,10 @@ const OrganizationalTree = () => {
     members: [
       {
         name: "Mr. Utkarsh Verma",
-        title: "Registration Head",
-        description: "Head of Registration Committee",
         image: "/images/Mr. Utkarsh Vermajpg.jpg"
       },
       {
         name: "Ms. Kashish Maurya",
-        title: "Registration Coordinator",
-        description: "Registration Committee Member",
         image: "/images/Ms. Kashish Maurya.jpg"
       }
     ]
@@ -124,16 +157,12 @@ const OrganizationalTree = () => {
     title: "HOSPITALITY COMMITTEE",
     members: [
       {
-        name: "Mr. Dhirendra Vishwakarma",
-        title: "Hospitality Head",
-        description: "Head of Hospitality Committee",
-        image: "/images/Mr. Dhirendra Vishwakarma.jpg"
+        name: "Mr. Sanjay Kumar Yadav",
+        image: "/images/Mr. Sanjay Kumar Yadav.jpg"
       },
       {
-        name: "Mr. Sanjay Kumar Yadav",
-        title: "Hospitality Coordinator",
-        description: "Hospitality Committee Member",
-        image: "/images/Mr. Sanjay Kumar Yadav.jpg"
+        name: "Mr. Dhirendra Vishwakarma",
+        image: "/images/Mr. Dhirendra Vishwakarma.jpg"
       }
     ]
   };
@@ -142,27 +171,21 @@ const OrganizationalTree = () => {
     title: "EVENT AND CULTURAL COMMITTEE",
     members: [
       {
-        name: "Mrs. Shalini Kesharwan",
-        title: "Event Head",
-        description: "Head of Event and Cultural Committee",
+        name: "Mrs. Shalini Kesharwani",
         image: "/images/Mrs. Shalini Kesharwan.jpg"
       },
       {
         name: "Ms. Varsha Chaudhary",
-        title: "Cultural Coordinator",
-        description: "Event and Cultural Committee Member",
         image: "/images/Ms. Varsha Chaudhary.png.jpg"
       }
     ]
   };
 
   const publicityCommittee = {
-    title: "PUBLICITY AND MEDIA",
+    title: "PUBLICITY AND MEDIA COMMITTEE",
     members: [
       {
         name: "Mr. Mahesh Kumar",
-        title: "Media Head",
-        description: "Head of Publicity and Media",
         image: "/images/Mr. Mahesh Kumar.jpg"
       }
     ]
@@ -202,8 +225,8 @@ const OrganizationalTree = () => {
         <div className="sub-committee-section">
           {committee.committees.map((subCommittee, index) => (
             <div key={index} className="committee-section">
-              <h3 
-                className="committee-title clickable" 
+              <h3
+                className="committee-title clickable"
                 onClick={() => openCommitteeModal(subCommittee)}
               >
                 {subCommittee.name}
@@ -230,9 +253,9 @@ const OrganizationalTree = () => {
     if (committee.rows) {
       return (
         <div className="committee-section">
-          <h3 
-            className="committee-title clickable" 
-            onClick={() => openCommitteeModal({...committee, members: committee.rows.flat()})}
+          <h3
+            className="committee-title clickable"
+            onClick={() => openCommitteeModal({ ...committee, members: committee.rows.flat() })}
           >
             {committee.title}
           </h3>
@@ -256,10 +279,26 @@ const OrganizationalTree = () => {
       );
     }
 
+    // Handle Advisory Committee with simple names list
+    if (committee.isNamesList) {
+      return (
+        <div className="committee-section">
+          <h3 className="committee-title">{committee.title}</h3>
+          <div className="names-list">
+            {committee.names.map((name, index) => (
+              <div key={index} className="name-item">
+                {name}
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div className="committee-section">
-        <h3 
-          className="committee-title clickable" 
+        <h3
+          className="committee-title clickable"
           onClick={() => openCommitteeModal(committee)}
         >
           {committee.title}
@@ -310,27 +349,31 @@ const OrganizationalTree = () => {
             <div className="committee-group">
               {renderCommitteeSection(conferenceAdvisoryCommittee)}
             </div>
-            
+
+            <div className="committee-group">
+              {renderCommitteeSection(advisoryCommittee)}
+            </div>
+
             <div className="committee-group">
               {renderCommitteeSection(scientificCommittee)}
             </div>
-            
+
             <div className="committee-group">
               {renderCommitteeSection(financeCommittee)}
             </div>
-            
+
             <div className="committee-group">
               {renderCommitteeSection(registrationCommittee)}
             </div>
-            
+
             <div className="committee-group">
               {renderCommitteeSection(hospitalityCommittee)}
             </div>
-            
+
             <div className="committee-group">
               {renderCommitteeSection(eventCommittee)}
             </div>
-            
+
             <div className="committee-group">
               {renderCommitteeSection(publicityCommittee)}
             </div>

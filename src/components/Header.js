@@ -25,7 +25,7 @@ const Header = () => {
       setIsScrolled(scrollPosition > 50);
 
       // Determine active section - updated sequence
-      const sections = ['home', 'key-areas', 'important-dates', 'papers', 'registration', 'venue', 'speakers', 'organizing-committee', 'contact'];
+      const sections = ['home', 'key-areas', 'important-dates', 'papers', 'registration', 'speakers', 'organizing-committee', 'venue', 'contact'];
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -102,27 +102,27 @@ const Header = () => {
               Registration
             </a>
             <a
-              href="#venue"
-              className={activeSection === 'venue' ? 'active' : ''}
-              onClick={(e) => { e.preventDefault(); scrollToSection('venue'); }}
-            >
-              Venue
-            </a>
-          </div>
-          <div className="nav-right">
-            <a
               href="#speakers"
               className={activeSection === 'speakers' ? 'active' : ''}
               onClick={(e) => { e.preventDefault(); scrollToSection('speakers'); }}
             >
               Speakers
             </a>
+          </div>
+          <div className="nav-right">
             <a
               href="#organizing-committee"
               className={activeSection === 'organizing-committee' ? 'active' : ''}
               onClick={(e) => { e.preventDefault(); scrollToSection('organizing-committee'); }}
             >
               Committee
+            </a>
+            <a
+              href="#venue"
+              className={activeSection === 'venue' ? 'active' : ''}
+              onClick={(e) => { e.preventDefault(); scrollToSection('venue'); }}
+            >
+              Venue
             </a>
             <a
               href="#contact"

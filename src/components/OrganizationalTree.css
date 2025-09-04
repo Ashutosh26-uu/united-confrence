@@ -304,7 +304,7 @@
 .tree-node {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 250, 0.95));
   border-radius: 20px;
-  padding: 35px;
+  padding: 0;
   text-align: center;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
@@ -312,6 +312,9 @@
   border: 2px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  min-height: 200px;
 }
 
 .tree-node::before {
@@ -338,30 +341,29 @@
 
 /* Enhanced Node Image Styling */
 .node-image {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  margin: 0 auto 1.5rem;
+  width: 50%;
+  height: 200px;
+  border-radius: 20px 0 0 20px;
+  margin: 0;
   position: relative;
   overflow: hidden;
-  border: 3px solid #ffffff;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border: none;
+  box-shadow: none;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  flex-shrink: 0;
 }
 
 .node-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 20px 0 0 20px;
   transition: all 0.3s ease;
 }
 
 .node-image:hover {
-  transform: scale(1.1);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
-  border-color: #3498db;
+  transform: scale(1.02);
 }
 
 .node-image:hover img {
@@ -380,52 +382,102 @@
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   font-weight: 700;
-  font-size: 1.2rem;
-  border-radius: 50%;
+  font-size: 2rem;
+  border-radius: 20px 0 0 20px;
 }
 
 /* Patron Node Styling */
 .patron-node .node-image {
-  width: 100px;
-  height: 100px;
-  border: 4px solid #ffd700;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  width: 50%;
+  height: 200px;
+  border: none;
+  box-shadow: none;
+  position: relative;
 }
 
-.patron-node .node-image:hover {
+.patron-node .node-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 4px solid #ffd700;
+  border-radius: 20px 0 0 20px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  pointer-events: none;
+}
+
+.patron-node .node-image:hover::after {
   box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
   border-color: #ffed4e;
 }
 
 /* Leadership Node Styling */
 .leadership-node .node-image {
-  width: 90px;
-  height: 90px;
-  border: 3px solid #3498db;
+  width: 50%;
+  height: 200px;
+  border: none;
+  position: relative;
 }
 
-.leadership-node .node-image:hover {
+.leadership-node .node-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 3px solid #3498db;
+  border-radius: 20px 0 0 20px;
+  pointer-events: none;
+}
+
+.leadership-node .node-image:hover::after {
   border-color: #2980b9;
 }
 
 /* Member Node Styling */
 .member-node .node-image {
-  width: 70px;
-  height: 70px;
-  border: 2px solid #e74c3c;
+  width: 50%;
+  height: 200px;
+  border: none;
+  position: relative;
 }
 
-.member-node .node-image:hover {
+.member-node .node-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #e74c3c;
+  border-radius: 20px 0 0 20px;
+  pointer-events: none;
+}
+
+.member-node .node-image:hover::after {
   border-color: #c0392b;
+}
+
+.node-content {
+  flex: 1;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
 }
 
 .node-content h3,
 .node-content h4 {
-  color: #1a202c;
-  margin-bottom: 12px;
+  color: #000000;
+  margin-bottom: 8px;
   font-weight: 700;
   font-size: 1.3rem;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-shadow: none;
+  line-height: 1.2;
 }
 
 .patron-node .node-content h3 {
@@ -440,12 +492,13 @@
 }
 
 .node-content p {
-  color: #4a5568;
+  color: #666666;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 0.9rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: none;
+  margin-bottom: 0;
 }
 
 /* Connection Lines */
@@ -589,13 +642,34 @@
   }
 
   .committee-members {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
   }
 
   .committee-members.single-row .tree-node {
-    min-width: 180px;
-    max-width: 220px;
+    min-width: 280px;
+    max-width: 350px;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .committee-members.single-row .tree-node .node-image {
+    width: 100%;
+    height: 150px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .committee-members.single-row .tree-node .node-image img {
+    border-radius: 20px 20px 0 0;
+  }
+
+  .committee-members.single-row .tree-node .initials-fallback {
+    border-radius: 20px 20px 0 0;
+  }
+
+  .committee-members.single-row .tree-node .node-content {
+    text-align: center;
+    padding: 20px;
   }
 
   .committee-members.single-row[data-member-count="2"] {
@@ -627,6 +701,30 @@
     flex-direction: column;
   }
 
+  .committee-row .tree-node {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .committee-row .tree-node .node-image {
+    width: 100%;
+    height: 150px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .committee-row .tree-node .node-image img {
+    border-radius: 20px 20px 0 0;
+  }
+
+  .committee-row .tree-node .initials-fallback {
+    border-radius: 20px 20px 0 0;
+  }
+
+  .committee-row .tree-node .node-content {
+    text-align: center;
+    padding: 20px;
+  }
+
   .committee-row[data-member-count="2"] {
     flex-direction: column;
     gap: 20px;
@@ -647,14 +745,8 @@
   }
 
   .tree-node {
-    padding: 20px;
+    padding: 0;
   }
-
-  .node-image {
-    width: 60px;
-    height: 60px;
-  }
-
 
   .level-2 {
     flex-direction: column;
@@ -663,18 +755,15 @@
   }
 
   .members-grid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
   }
 
-  .patron-node .node-image {
-    width: 80px;
-    height: 80px;
-  }
-
-  .leadership-node .node-image {
-    width: 70px;
-    height: 70px;
+  /* Update special node styling for mobile */
+  .patron-node .node-image::after,
+  .leadership-node .node-image::after,
+  .member-node .node-image::after {
+    border-radius: 20px 20px 0 0;
   }
 }
 
@@ -688,13 +777,19 @@
   }
 
   .committee-members {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: 1fr;
     gap: 15px;
   }
 
   .committee-members.single-row .tree-node {
-    min-width: 150px;
-    max-width: 180px;
+    min-width: 280px;
+    max-width: 100%;
+    flex-direction: column;
+  }
+
+  .committee-members.single-row .tree-node .node-image {
+    width: 100%;
+    height: 120px;
   }
 
   .committee-group {
@@ -703,12 +798,7 @@
   }
 
   .tree-node {
-    padding: 15px;
-  }
-
-  .node-image {
-    width: 50px;
-    height: 50px;
+    padding: 0;
   }
 
   .view-more-btn {
@@ -717,11 +807,24 @@
   }
 
   .members-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: 1fr;
   }
 
   .level-2 {
     gap: 20px;
+  }
+
+  .committee-row .tree-node .node-image {
+    height: 120px;
+  }
+
+  .node-content h3,
+  .node-content h4 {
+    font-size: 1.1rem;
+  }
+
+  .node-content p {
+    font-size: 0.8rem;
   }
 }
 
@@ -928,5 +1031,48 @@
 
   .modal-member-info h3 {
     font-size: 1.2rem;
+  }
+}
+
+/* Names List Styles for Advisory Committee */
+.names-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.name-item {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: black;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.name-item:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .names-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 15px;
+  }
+  
+  .name-item {
+    font-size: 0.9rem;
+    padding: 10px 15px;
   }
 }

@@ -12,13 +12,14 @@ const Home = () => {
   const slideInterval = useRef();
   const headlineInterval = useRef();
   const touchThreshold = 50;
-
+  
+  // Headlines array
   const headlines = [
-    " CONFERENCE DATE AND VENUE	7th and 8th November at United University, Rawatpur, Prayagraj",
-    " CONFERENCE DATE AND VENUE 7th and 8th November at United University, Rawatpur, Prayagraj",
-    " CONFERENCE DATE AND VENUE 7th and 8th November at United University, Rawatpur, Prayagraj"
+    "Fostering Innovation for a Healthier Tomorrow",
+    "Navigating the Future of Pharmaceutical Sciences",
+    "Advancing Healthcare Through Research Excellence",
+    "Building Tomorrow's Pharmaceutical Professionals"
   ];
-
   const slides = [
     {
       title: "UPHARMORA - 1.0",
@@ -198,6 +199,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+
 
       {/* Conference Section */}
       <section className="conference-section">

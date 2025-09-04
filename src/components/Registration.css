@@ -167,7 +167,19 @@
   box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
 }
 
-.payment-section p {
+.payment-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.payment-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+.payment-text p {
   color: #000000;
   font-size: 1rem;
   text-shadow: none;
@@ -175,6 +187,37 @@
   padding: 15px;
   border-radius: 8px;
   backdrop-filter: blur(5px);
+  margin: 0;
+}
+
+.qr-code-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.payment-qr-code {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  border: 2px solid #e74c3c;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.qr-code-label {
+  color: #2c3e50;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .registr.flyer-section {
@@ -348,6 +391,26 @@
   .table-row>div {
     border-right: none;
     border-bottom: 1px solid #e9ecef;
+  }
+
+  .payment-content {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .payment-text {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .qr-code-container {
+    padding: 15px;
+  }
+
+  .payment-qr-code {
+    width: 120px;
+    height: 120px;
   }
 
   .registration-form {

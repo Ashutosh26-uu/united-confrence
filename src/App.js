@@ -35,14 +35,14 @@ function App() {
         <section id="registration">
           <Registration />
         </section>
-        <section id="venue">
-          <Venue />
-        </section>
         <section id="speakers">
           <Speakers />
         </section>
         <section id="organizing-committee">
           <OrganizationalTree />
+        </section>
+        <section id="venue">
+          <Venue />
         </section>
         <section id="contact">
           <Contact />

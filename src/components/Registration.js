@@ -67,7 +67,22 @@ const Registration = () => {
 
         <div className="payment-section">
           <h3>MODE OF PAYMENT</h3>
-          <p>Registration fee can be paid through RTGS/UPI.</p>
+          <div className="payment-content">
+            <div className="payment-text">
+              <p>Registration fee can be paid through RTGS/UPI.</p>
+            </div>
+            <div className="qr-code-container">
+              <img
+                src="/images/QR-Code.png"
+                alt="Payment QR Code"
+                className="payment-qr-code"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                }}
+              />
+              <p className="qr-code-label">Scan to Register</p>
+            </div>
+          </div>
         </div>
 
         <div className="registration-form">
@@ -75,7 +90,7 @@ const Registration = () => {
           <div className="google-form-container">
             <p>Click the button below to access our online registration form:</p>
             <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdwuru6w7FNLf-GYJUYjE24zOf7hmF9IPpMqsZkDJsvW3cdBA/viewform?usp=sharing&ouid=102838899599487786856"
+              href="https://uniteduniversity.edu.in/regForms/Form1023.aspx"
               target="_blank"
               rel="noopener noreferrer"
               className="btn register-now-btn"

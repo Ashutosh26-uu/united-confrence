@@ -17,7 +17,12 @@ const ImportantDates = () => {
     {
       title: "Abstract Acceptance Notification",
       date: "18th October 2025",
-      description: "Notification of accepted abstracts and presentation details."
+      description: "Notification of accepted abstracts."
+    },
+    {
+      title: "Dedline for full length Paper Submission",
+      date: "20th October 2025",
+      description: "Last date for full length paper submission."
     },
     {
       title: "Conference Date",
@@ -29,36 +34,8 @@ const ImportantDates = () => {
   return (
     <section id="important-dates" className="section important-dates">
       <div className="dates-container">
-        <h2>Dates to Remember</h2>
-
-        <div className="dates-list">
-          <div className="date-item">
-            <div className="date-content">
-              <span className="date-text">Conference Date- 7<sup>th</sup> to 8<sup>th</sup> November 2025</span>
-            </div>
-          </div>
-
-          <div className="date-item">
-            <div className="date-content">
-              <span className="date-text">Last Date of Registration 15<sup>th</sup> October 2025</span>
-            </div>
-          </div>
-
-          <div className="date-item">
-            <div className="date-content">
-              <span className="date-text">Deadline for Abstract Submission 10<sup>th</sup> October 2025</span>
-            </div>
-          </div>
-
-          <div className="date-item">
-            <div className="date-content">
-              <span className="date-text">Abstract Acceptance Notification 18<sup>th</sup> October 2025</span>
-            </div>
-          </div>
-        </div>
-
         <div className="timeline-section">
-          <h3>Conference Timeline</h3>
+          <h3>Dates To Remember</h3>
           <InteractiveTimeline events={timelineEvents} />
         </div>
       </div>
