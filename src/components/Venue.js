@@ -20,7 +20,7 @@ const Venue = () => {
           <div className="directions">
             <h4>How to Reach</h4>
             <ul>
-              <li><strong>By Car:</strong> NH-2 to Prayagraj, then Rawatpur Road. parking available on campus</li>
+              <li><strong>By Car:</strong> NH-35 to Prayagraj, then Rawatpur Road. parking available on campus</li>
               <li><strong>By Bus:</strong> Prayagraj Bus Stand to Jhalwa/IIIT route buses</li>
               <li><strong>By Train:</strong> Prayagraj Junction (12 km) or Naini Junction (20 km)</li>
               <li><strong>By Air:</strong> Prayagraj Airport (Bamrauli) - 7.5 km from campus</li>

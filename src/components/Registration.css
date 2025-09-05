@@ -312,48 +312,9 @@
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 1px;
-}
-
-.registr.flyer-section {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  padding: 30px;
-  border-radius: 15px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.flyer-section h3 {
-  color: white;
-  margin-bottom: 20px;
-  font-size: 1.5rem;
-}
-
-.download-container {
-  display: flex;
-  justify-content: center;
-}
-
-.download-btn {
-  background: linear-gradient(135deg, #ff6b6b, #ffd93d);
-  color: white;
-  text-decoration: none;
-  padding: 15px 30px;
-  border-radius: 50px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
-}
-
-.download-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
-}
-
-.download-icon {
-  font-size: 1.2rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .download-btn-modern {

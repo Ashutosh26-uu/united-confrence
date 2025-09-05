@@ -6,7 +6,7 @@ const KeyAreas = () => {
         <section id="key-areas" className="section key-areas">
             <div className="key-areas-container">
                 <div className="key-areas-header">
-                    <h2>KEY AREAS</h2>
+                    <h2>THRUST AREAS</h2>
                 </div>
 
                 <div className="thrust-areas-list">

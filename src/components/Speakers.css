@@ -131,13 +131,13 @@
   left: 0;
   width: 100%;
   height: 100%;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  font-weight: 700;
-  font-size: 3rem;
   border-radius: 50%;
 }
 
@@ -193,13 +193,12 @@
 
 .speakers-grid {
   display: flex;
-  flex-wrap: nowrap;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 2rem;
   margin-top: 2rem;
-  overflow-x: auto;
-  padding-bottom: 1rem;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: stretch;
+  padding: 1rem;
 }
 
 .speaker-card {
@@ -222,6 +221,26 @@
   gap: 20px;
 }
 
+.uniform-speaker-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 2px solid rgba(25, 118, 210, 0.3);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  width: 280px;
+  height: 320px;
+  flex-shrink: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .speaker-card::before {
   content: '';
@@ -234,7 +253,22 @@
   transition: left 0.5s;
 }
 
+.uniform-speaker-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
 .speaker-card:hover::before {
+  left: 100%;
+}
+
+.uniform-speaker-card:hover::before {
   left: 100%;
 }
 
@@ -245,12 +279,30 @@
   background: rgba(231, 76, 60, 0.2);
 }
 
+.uniform-speaker-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(25, 118, 210, 0.4);
+  border-color: rgba(25, 118, 210, 0.7);
+  background: rgba(25, 118, 210, 0.1);
+}
+
 .guest-card {
   border: 2px solid rgba(255, 217, 61, 0.2);
 }
 
 .guest-card:hover {
   border-color: rgba(255, 217, 61, 0.5);
+}
+
+.uniform-speaker-card .speaker-image-container {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-bottom: 1rem;
 }
 
 .speaker-image-container {
@@ -261,6 +313,19 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+}
+
+.uniform-speaker-card .speaker-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(25, 118, 210, 0.4);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .speaker-image {
@@ -286,32 +351,9 @@
   display: block;
 }
 
-.speaker-initials {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: white;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-
-.speaker-name-label {
-  color: #000000;
-  font-size: 1.4rem;
-  font-weight: 800;
-  text-align: left;
-  margin: 0;
-  text-shadow: none;
-  line-height: 1.3;
-  word-wrap: break-word;
-  flex: 1;
+.uniform-speaker-card:hover .speaker-image {
+  transform: scale(1.05);
+  border-color: rgba(25, 118, 210, 0.8);
 }
 
 .speaker-card:hover .speaker-image {
@@ -371,6 +413,73 @@
   box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
 }
 
+/* Speaker Name Below Image */
+.speaker-name-below {
+  text-align: center;
+  width: 100%;
+  padding-top: 0.5rem;
+}
+
+.speaker-name-below h4 {
+  color: #1976d2;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: none;
+  line-height: 1.3;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+/* Special styling for Chief Guest and Keynote Speaker */
+.chief-guest-card {
+  border: 3px solid rgba(255, 193, 7, 0.6);
+  background: rgba(255, 248, 225, 0.95);
+}
+
+.chief-guest-card:hover {
+  border-color: rgba(255, 193, 7, 0.9);
+  background: rgba(255, 193, 7, 0.15);
+  box-shadow: 0 20px 40px rgba(255, 193, 7, 0.4);
+}
+
+.chief-guest-card .speaker-image {
+  border: 4px solid rgba(255, 193, 7, 0.5);
+}
+
+.chief-guest-card:hover .speaker-image {
+  border-color: rgba(255, 193, 7, 0.8);
+}
+
+.chief-guest-card .speaker-name-below h4 {
+  color: #f57f17;
+  font-weight: 800;
+}
+
+.keynote-speaker-card {
+  border: 3px solid rgba(76, 175, 80, 0.6);
+  background: rgba(232, 245, 233, 0.95);
+}
+
+.keynote-speaker-card:hover {
+  border-color: rgba(76, 175, 80, 0.9);
+  background: rgba(76, 175, 80, 0.15);
+  box-shadow: 0 20px 40px rgba(76, 175, 80, 0.4);
+}
+
+.keynote-speaker-card .speaker-image {
+  border: 4px solid rgba(76, 175, 80, 0.5);
+}
+
+.keynote-speaker-card:hover .speaker-image {
+  border-color: rgba(76, 175, 80, 0.8);
+}
+
+.keynote-speaker-card .speaker-name-below h4 {
+  color: #388e3c;
+  font-weight: 800;
+}
+
 /* Enhanced Mobile Responsiveness for Speakers */
 @media (max-width: 1024px) {
   .speakers {
@@ -428,6 +537,32 @@
 
   .speakers-grid {
     gap: 1rem;
+  }
+
+  .uniform-speaker-card {
+    width: 250px;
+    height: 300px;
+    padding: 1rem;
+  }
+
+  .uniform-speaker-card .speaker-image-container {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 0.5rem;
+  }
+
+  .uniform-speaker-card .speaker-image {
+    width: 160px;
+    height: 160px;
+  }
+
+  .speaker-name-below h4 {
+    font-size: 1rem;
+  }
+
+  .chief-guest-card .speaker-name-below h4,
+  .keynote-speaker-card .speaker-name-below h4 {
+    font-size: 1rem;
   }
 
   .speaker-card {
@@ -539,7 +674,7 @@
   }
 
   .image-initials {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .speaker-card {
@@ -646,5 +781,32 @@
   .speaker-name-label {
     font-size: 0.8rem;
     max-width: 100px;
+  }
+
+  .uniform-speaker-card {
+    width: 200px;
+    height: 260px;
+    padding: 0.8rem;
+  }
+
+  .uniform-speaker-card .speaker-image-container {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 0.3rem;
+  }
+
+  .uniform-speaker-card .speaker-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .speaker-name-below h4 {
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+
+  .chief-guest-card .speaker-name-below h4,
+  .keynote-speaker-card .speaker-name-below h4 {
+    font-size: 0.9rem;
   }
 }

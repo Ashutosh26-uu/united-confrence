@@ -3,12 +3,12 @@ import './Speakers.css';
 
 const Speakers = () => {
   const chiefGuest = {
-    name: "Prof(Dr). R.N. Gupta",
+    name: "Prof.(Dr). R.N. Gupta",
     image: "/images/Dr.R.N. gupta.png"
   };
 
   const guestOfHonour = {
-    name: "Prof(Dr). Roop Krishan Khar",
+    name: "Prof.(Dr). Roop Krishen Khar",
     image: "/images/Dr.Roop. k. Khar.jpg"
   };
 
@@ -35,10 +35,9 @@ const Speakers = () => {
     }
   ];
 
-  const renderSpeakerImage = (speaker) => {
+  const renderSpeakerCard = (speaker) => {
     return (
-      <>
-        <p className="speaker-name-label">{speaker.name}</p>
+      <div className="uniform-speaker-card">
         <div className="speaker-image-container">
           <div className="speaker-image">
             <img
@@ -54,7 +53,10 @@ const Speakers = () => {
             </div>
           </div>
         </div>
-      </>
+        <div className="speaker-name-below">
+          <h4>{speaker.name}</h4>
+        </div>
+      </div>
     );
   };
 
@@ -63,33 +65,31 @@ const Speakers = () => {
       <div className="speakers-container">
         <div className="speakers-header">
           <h2>EMINENT SPEAKERS</h2>
-          <p>Renowned experts in pharmaceutical sciences</p>
+          <p>Renowned experts in Pharmaceutical Sciences</p>
         </div>
 
         {/* Chief Guest */}
         <div className="chief-guest-section">
           <h3 className="section-title">Chief Guest</h3>
-          <div className="hover-card-container">
-            <div className="hover-card">
-              <div className="card-image">
-                <img
-                  src={chiefGuest.image}
-                  alt={chiefGuest.name}
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'flex';
-                  }}
-                />
-                <div className="image-initials" style={{ display: 'none' }}>
-                  {chiefGuest.name.split(' ').map(n => n[0]).join('')}
+          <div className="speakers-grid">
+            <div className="uniform-speaker-card chief-guest-card">
+              <div className="speaker-image-container">
+                <div className="speaker-image">
+                  <img
+                    src={chiefGuest.image}
+                    alt={chiefGuest.name}
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                  <div className="speaker-initials" style={{ display: 'none' }}>
+                    {chiefGuest.name.split(' ').map(n => n[0]).join('')}
+                  </div>
                 </div>
               </div>
-              <div className="card-overlay">
-                <div className="card-content">
-                  <h4 className="card-name">{chiefGuest.name}</h4>
-                  <p className="card-title">{chiefGuest.title}</p>
-                  <span className="card-designation">{chiefGuest.designation}</span>
-                </div>
+              <div className="speaker-name-below">
+                <h4>{chiefGuest.name}</h4>
               </div>
             </div>
           </div>
@@ -98,27 +98,25 @@ const Speakers = () => {
         {/* Guest of Honour / Keynote Speaker */}
         <div className="guest-honour-section">
           <h3 className="section-title">Guest of Honour / Keynote Speaker</h3>
-          <div className="hover-card-container">
-            <div className="hover-card">
-              <div className="card-image">
-                <img
-                  src={guestOfHonour.image}
-                  alt={guestOfHonour.name}
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'flex';
-                  }}
-                />
-                <div className="image-initials" style={{ display: 'none' }}>
-                  {guestOfHonour.name.split(' ').map(n => n[0]).join('')}
+          <div className="speakers-grid">
+            <div className="uniform-speaker-card keynote-speaker-card">
+              <div className="speaker-image-container">
+                <div className="speaker-image">
+                  <img
+                    src={guestOfHonour.image}
+                    alt={guestOfHonour.name}
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                  <div className="speaker-initials" style={{ display: 'none' }}>
+                    {guestOfHonour.name.split(' ').map(n => n[0]).join('')}
+                  </div>
                 </div>
               </div>
-              <div className="card-overlay">
-                <div className="card-content">
-                  <h4 className="card-name">{guestOfHonour.name}</h4>
-                  <p className="card-title">{guestOfHonour.title}</p>
-                  <span className="card-designation">{guestOfHonour.designation}</span>
-                </div>
+              <div className="speaker-name-below">
+                <h4>{guestOfHonour.name}</h4>
               </div>
             </div>
           </div>
@@ -129,8 +127,8 @@ const Speakers = () => {
           <h3 className="section-title">Speakers</h3>
           <div className="speakers-grid">
             {speakers.map((speaker, index) => (
-              <div key={index} className="speaker-card">
-                {renderSpeakerImage(speaker)}
+              <div key={index}>
+                {renderSpeakerCard(speaker)}
               </div>
             ))}
           </div>

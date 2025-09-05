@@ -25,34 +25,6 @@ const Registration = () => {
           </div>
         </div>
 
-        {/* Awards Highlight */}
-        <div className="awards-banner">
-          <div className="awards-content">
-            <span className="trophy-icon">🏆</span>
-            <div className="awards-text">
-              <strong>Best oral and poster presentations will be awarded!</strong>
-            </div>
-          </div>
-        </div>
-
-        {/* Conference Flyer Card */}
-        <div className="info-card flyer-card">
-          <div className="card-header">
-            <div className="card-icon">📄</div>
-            <h3>Download Conference Flyer</h3>
-          </div>
-          <div className="card-content">
-            <a
-              href="/images/flyer part 2 updated.pdf"
-              download="UPHARMORA_Conference_Flyer.pdf"
-              className="download-btn-modern"
-            >
-              <span className="btn-icon">📥</span>
-              Download Conference Flyer
-            </a>
-          </div>
-        </div>
-
         {/* Registration Fee Card */}
         <div className="info-card fee-card">
           <div className="card-header">
@@ -91,6 +63,34 @@ const Registration = () => {
                 <div className="col-spot">₹3000/-</div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Awards Highlight */}
+        <div className="awards-banner">
+          <div className="awards-content">
+            <span className="trophy-icon">🏆</span>
+            <div className="awards-text">
+              <strong>Best oral and poster presentations will be awarded!</strong>
+            </div>
+          </div>
+        </div>
+
+        {/* Conference Flyer Card */}
+        <div className="info-card flyer-card">
+          <div className="card-header">
+            <div className="card-icon">📄</div>
+            <h3>Download Conference Flyer</h3>
+          </div>
+          <div className="card-content">
+            <a
+              href="/images/FIHTNFPS 2025.pdf"
+              download="FIHTNFPS_2025_Conference_Flyer.pdf"
+              className="download-btn-modern"
+            >
+              <span className="btn-icon">📥</span>
+              Download Conference Flyer
+            </a>
           </div>
         </div>
 

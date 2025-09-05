@@ -76,7 +76,7 @@ const Header = () => {
               className={activeSection === 'key-areas' ? 'active' : ''}
               onClick={(e) => { e.preventDefault(); scrollToSection('key-areas'); }}
             >
-              Key Areas
+              Thrust Areas
             </a>
             <a
               href="#important-dates"

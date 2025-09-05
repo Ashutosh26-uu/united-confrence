@@ -1,106 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import './Contact.css';
 
 const Contact = () => {
     const [ref, isVisible] = useScrollAnimation();
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-    });
-    const [formErrors, setFormErrors] = useState({});
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitSuccess, setSubmitSuccess] = useState(false);
-
-    // Form validation
-    const validateForm = () => {
-        const errors = {};
-
-        if (!formData.name.trim()) {
-            errors.name = 'Name is required';
-        }
-
-        if (!formData.email.trim()) {
-            errors.email = 'Email is required';
-        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-            errors.email = 'Please enter a valid email address';
-        }
-
-        if (!formData.subject.trim()) {
-            errors.subject = 'Subject is required';
-        }
-
-        if (!formData.message.trim()) {
-            errors.message = 'Message is required';
-        } else if (formData.message.length < 10) {
-            errors.message = 'Message must be at least 10 characters';
-        }
-
-        return errors;
-    };
-
-    // Handle form input changes
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }));
-
-        // Clear error when user starts typing
-        if (formErrors[name]) {
-            setFormErrors(prev => ({
-                ...prev,
-                [name]: ''
-            }));
-        }
-    };
-
-    // Handle form submission
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const errors = validateForm();
-
-        if (Object.keys(errors).length > 0) {
-            setFormErrors(errors);
-            return;
-        }
-
-        setIsSubmitting(true);
-        setFormErrors({});
-
-        // Create mailto link with form data
-        const subject = encodeURIComponent(`UPHARMORA Conference: ${formData.subject}`);
-        const body = encodeURIComponent(
-            `Dear UPHARMORA Team,\n\n` +
-            `Name: ${formData.name}\n` +
-            `Email: ${formData.email}\n` +
-            `Subject: ${formData.subject}\n\n` +
-            `Message:\n${formData.message}\n\n` +
-            `Best regards,\n${formData.name}`
-        );
-
-        const mailtoLink = `mailto:confpharm@uniteduniversity.edu.in?subject=${subject}&body=${body}`;
-
-        // Open email client
-        window.location.href = mailtoLink;
-
-        // Show instruction message
-        setTimeout(() => {
-            setSubmitSuccess(true);
-            setFormData({
-                name: '',
-                email: '',
-                subject: '',
-                message: ''
-            });
-            setIsSubmitting(false);
-
-            setTimeout(() => setSubmitSuccess(false), 10000);
-        }, 1000);
-    };
 
     const contactInfo = [
         {
@@ -116,21 +19,15 @@ const Contact = () => {
             action: 'tel:18001218797'
         },
         {
-            icon: '📞',
-            title: 'Helpline',
-            details: ['6390166660'],
-            action: 'tel:6390166660'
-        },
-        {
             icon: '💬',
             title: 'WhatsApp',
-            details: ['8953167208', '6389209921', '9696286985'],
+            details: ['8953167208', '9696286985'],
             action: 'https://wa.me/918953167208'
         },
         {
             icon: '📍',
             title: 'Address',
-            details: ['United University', 'Prayagraj, Uttar Pradesh', 'India - 211010'],
+            details: ['United University', 'Prayagraj, Uttar Pradesh', 'India - 211012'],
             action: 'https://maps.google.com'
         },
         {
@@ -147,13 +44,6 @@ const Contact = () => {
                 <h2 className={`fade-in ${isVisible ? 'visible' : ''}`}>Contact Us</h2>
                 <p className="contact-subtitle">Get in touch with us for any queries about UPHARMORA - 1.0</p>
             </div>
-
-            {/* Submit Success Message */}
-            {submitSuccess && (
-                <div className="submit-success-message">
-                    🎉 Your message has been sent successfully! We'll get back to you soon.
-                </div>
-            )}
 
             <div className="contact-content">
                 {/* Contact Information Cards */}
@@ -183,92 +73,6 @@ const Contact = () => {
                             )}
                         </div>
                     ))}
-                </div>
-
-                {/* Contact Form */}
-                <div className={`contact-form-container slide-in-right ${isVisible ? 'visible' : ''}`}>
-                    <div className="form-header">
-                        <h3>Send us a Message</h3>
-                        <p>Have questions about the conference? We're here to help!</p>
-                    </div>
-
-                    <form onSubmit={handleSubmit} className="contact-form">
-                        <div className="form-row">
-                            <div className="form-group">
-                                <label htmlFor="name">Full Name *</label>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    value={formData.name}
-                                    onChange={handleInputChange}
-                                    className={formErrors.name ? 'error' : ''}
-                                    placeholder="Enter your full name"
-                                />
-                                {formErrors.name && <span className="error-message">{formErrors.name}</span>}
-                            </div>
-
-                            <div className="form-group">
-                                <label htmlFor="email">Email Address *</label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    value={formData.email}
-                                    onChange={handleInputChange}
-                                    className={formErrors.email ? 'error' : ''}
-                                    placeholder="your.email@example.com"
-                                />
-                                {formErrors.email && <span className="error-message">{formErrors.email}</span>}
-                            </div>
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="subject">Subject *</label>
-                            <input
-                                type="text"
-                                id="subject"
-                                name="subject"
-                                value={formData.subject}
-                                onChange={handleInputChange}
-                                className={formErrors.subject ? 'error' : ''}
-                                placeholder="What is this regarding?"
-                            />
-                            {formErrors.subject && <span className="error-message">{formErrors.subject}</span>}
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="message">Message *</label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                value={formData.message}
-                                onChange={handleInputChange}
-                                className={formErrors.message ? 'error' : ''}
-                                placeholder="Type your message here..."
-                                rows="6"
-                            />
-                            {formErrors.message && <span className="error-message">{formErrors.message}</span>}
-                        </div>
-
-                        <button
-                            type="submit"
-                            className={`submit-btn ${isSubmitting ? 'loading' : ''}`}
-                            disabled={isSubmitting}
-                        >
-                            {isSubmitting ? (
-                                <>
-                                    <span className="spinner"></span>
-                                    Sending...
-                                </>
-                            ) : (
-                                <>
-                                    <span className="btn-icon">📤</span>
-                                    Send Message
-                                </>
-                            )}
-                        </button>
-                    </form>
                 </div>
             </div>
 
